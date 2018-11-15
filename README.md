@@ -7,7 +7,7 @@
 [![Travis build
 status](https://travis-ci.org/forestgeo/fgeo.krig?branch=master)](https://travis-ci.org/forestgeo/fgeo.krig)
 [![Coverage
-status](https://coveralls.io/repos/github/maurolepore/fgeo.krig/badge.svg)](https://coveralls.io/r/maurolepore/fgeo.krig?branch=master)
+status](https://coveralls.io/repos/github/forestgeo/fgeo.krig/badge.svg)](https://coveralls.io/r/forestgeo/fgeo.krig?branch=master)
 [![CRAN
 status](http://www.r-pkg.org/badges/version/fgeo.krig)](https://cran.r-project.org/package=fgeo.krig)
 
