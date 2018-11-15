@@ -1,0 +1,32 @@
+url: https://forestgeo.github.io/fgeo.krig/
+
+authors:
+  Mauro Lepore:
+    href: https://github.com/maurolepore
+  CTFS-ForestGEO:
+    href: http://www.forestgeo.si.edu/
+
+template:
+  params:
+    bootswatch: united
+
+home:
+  links:
+  - text: Learn more about ForestGEO
+    href: http://www.forestgeo.si.edu/
+
+
+
+navbar:
+
+  type: default
+
+  right:
+    - icon: fa-gavel
+      href: https://github.com/maurolepore
+
+    - icon: fa-github
+      href: https://github.com/forestgeo/fgeo.krig
+
+    - text: fgeo
+      href: https://forestgeo.github.io/fgeo/

@@ -1,2 +1,5 @@
+^docs$
+^_pkgdown\.yml$
+^data-raw$
 ^fgeo\.krig\.Rproj$
 ^\.Rproj\.user$

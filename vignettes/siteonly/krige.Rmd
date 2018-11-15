@@ -1,0 +1,129 @@
+---
+title: "Krige soil data"
+subtitle: "Based on code developed by Graham Zemunik"
+author: "Mauro Lepore"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Krige soil data}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+set.seed(1014)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  comment = "#>",
+  collapse = TRUE,
+  cache = FALSE,
+  out.width = "70%",
+  fig.align = "center",
+  fig.width = 6,
+  fig.asp = 0.618,
+  fig.show = "hold"
+)
+```
+
+This article shows how to krig soil data with the function `krig()` developed by Graham Zemunik (see `?krig()`).
+
+```{r}
+library(ggplot2)
+library(purrr)
+library(fgeo.tool)
+library(fgeo.krig)
+```
+
+```{r}
+soil <- soil_random
+str(soil)
+```
+
+### Compare parameters
+
+Krige with automated parameters.
+
+```{r}
+auto <- krig(soil, var = "m3al", quiet = TRUE)
+summary(auto)
+```
+
+```{r}
+to_df(auto)
+```
+
+Try also:
+
+```R
+View(auto)
+```
+
+<img src="https://i.imgur.com/mhOYx6S.png" align="center" height=150 />
+
+With custom parameters (arbitrary but based on automated kriging parameters).
+
+```{r}
+params <- list(
+  model = "circular", range = 100, nugget = 1000, sill = 46000, kappa = 0.5
+)
+custom <- krig(soil, var = "m3al", params = params, quiet = TRUE)
+```
+
+Compare.
+
+```{r, fig.align="default", out.width="45%", fig.widh=(6 * 0.5 / 0.7)}
+title_auto <- "Automated parameters"
+ggplot(to_df(auto), aes(x = x, y = y, fill = z)) +
+  geom_tile() + 
+  coord_equal() +
+  labs(title = title_auto)
+
+title_custom <- "Custom parameters"
+ggplot(to_df(custom), aes(x = x, y = y, fill = z)) +
+  geom_tile() + 
+  coord_equal() +
+  labs(title = title_custom)
+```
+
+### Iterate over multiple soil variables
+
+```{r}
+soil <- soil_fake
+soil
+```
+
+Scale soil data to make their values fall within the same range. This is not crucial, but it will ease visual comparison.
+
+```{r}
+soil_vars <- c("mg", "c", "p")
+soil_scaled <- modify_at(soil_fake, .at = soil_vars, scale)
+```
+
+```{r}
+# krig() can take multiple soil variables.
+out_lst <- krig(soil_scaled, soil_vars, quiet = TRUE)
+
+# Overview results of one var
+summary(out_lst)
+```
+
+Transform krig results to a dataframe for easier manipulation and visualization.
+
+```{r}
+out_df <- to_df(out_lst, name = "soil_var")
+out_df
+
+tail(out_df)
+```
+
+
+### Visualize multiple soil variables
+
+The structure of this dataframe allows faceting with __gglot2__.
+
+```{r out.width="90%"}
+ggplot(out_df, aes(x, y, fill = z)) +
+  geom_tile() +
+  facet_wrap("soil_var") +
+  coord_equal()
+```

@@ -1,0 +1,74 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analize soils
+
+[![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.org/forestgeo/fgeo.krig?branch=master)](https://travis-ci.org/forestgeo/fgeo.krig)
+[![Coverage status](https://coveralls.io/repos/github/maurolepore/fgeo.krig/badge.svg)](https://coveralls.io/r/maurolepore/fgeo.krig?branch=master)
+[![CRAN status](http://www.r-pkg.org/badges/version/fgeo.krig)](https://cran.r-project.org/package=fgeo.krig)
+
+## Installation
+
+Install the development version of **fgeo.krig**:
+
+```
+# install.packages("devtools")
+devtools::install_github("forestgeo/fgeo.krig")
+```
+
+Or [install all **fgeo** packages in one step](https://forestgeo.github.io/fgeo/index.html#installation).
+
+For details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg).
+
+## Example
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+library(fgeo.tool)
+library(fgeo.krig)
+```
+
+### Krige soil data
+
+Using custom parameters and multiple soil variable.
+
+```{r}
+params <- list(
+  model = "circular", range = 100, nugget = 1000, sill = 46000, kappa = 0.5
+)
+
+vars <- c("c", "p")
+custom <- krig(soil_fake, vars, params = params, quiet = TRUE)
+
+# Showing only the first item of the resulting output
+to_df(custom)
+```
+
+Using automated parameters.
+
+```{r}
+result <- krig(soil_fake, var = "c", quiet = TRUE)
+summary(result)
+```
+
+[Get started with __fgeo__](https://forestgeo.github.io/fgeo/articles/fgeo.html)
+
+## Information
+
+* [Getting help](SUPPORT.md).
+* [Contributing](CONTRIBUTING.md).
+* [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+

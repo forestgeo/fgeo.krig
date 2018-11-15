@@ -1,17 +1,54 @@
 Package: fgeo.krig
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Analyze Soils Data
+Version: 0.0.0.9007
 Authors@R: 
     c(person(given = "Mauro",
              family = "Lepore",
              role = c("aut", "ctr", "cre"),
              email = "leporem@si.edu"),
+      person(given = "Graham",
+             family = "Zemunik",
+             role = "aut",
+             email = "grah.zem@gmail.com"),
       person(given = "CTFS-ForestGEO",
-             role = "cph",
+             role = c("cph", "fnd"),
              email = "ForestGEO@si.edu"))
-Description: What the package does (one paragraph).
+Description: Analyze soils.
 License: GPL-3
+URL: https://github.com/forestgeo/fgeo.krig
+BugReports: https://github.com/forestgeo/fgeo.krig/issues
+Depends: 
+    R (>= 3.2)
+Imports: 
+    fgeo.base,
+    fgeo.ctfs,
+    fgeo.tool,
+    fgeo.x,
+    geoR,
+    glue,
+    MASS,
+    rlang,
+    stats
+Suggests: 
+    covr,
+    dplyr,
+    fgeo.map,
+    ggplot2,
+    knitr,
+    purrr,
+    rmarkdown,
+    stringr,
+    testthat,
+    tidyr
+VignetteBuilder: 
+    knitr
+Remotes: 
+    forestgeo/fgeo.base,
+    forestgeo/fgeo.ctfs,
+    forestgeo/fgeo.map,
+    forestgeo/fgeo.tool,
+    forestgeo/fgeo.x
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/maurolepore/fgeo.krig
-BugReports: https://github.com/maurolepore/fgeo.krig/issues
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.1
