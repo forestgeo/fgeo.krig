@@ -1,11 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analize soils
+# <img src="https://i.imgur.com/vTLlhbp.png" align="right" height=88 /> Analyze soils
 
 [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis build
-status](https://travis-ci.org/forestgeo/fgeo.krig?branch=master)](https://travis-ci.org/forestgeo/fgeo.krig)
+status](https://travis-ci.org/forestgeo/fgeo.krig.svg?branch=master)](https://travis-ci.org/forestgeo/fgeo.krig)
 [![Coverage
 status](https://coveralls.io/repos/github/forestgeo/fgeo.krig/badge.svg)](https://coveralls.io/r/forestgeo/fgeo.krig?branch=master)
 [![CRAN
