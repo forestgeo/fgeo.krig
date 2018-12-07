@@ -20,7 +20,6 @@ BugReports: https://github.com/forestgeo/fgeo.krig/issues
 Depends: 
     R (>= 3.2)
 Imports: 
-    fgeo.base,
     fgeo.ctfs,
     fgeo.tool,
     fgeo.x,
@@ -43,7 +42,6 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes: 
-    forestgeo/fgeo.base,
     forestgeo/fgeo.ctfs,
     forestgeo/fgeo.map,
     forestgeo/fgeo.tool,

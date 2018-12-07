@@ -43,7 +43,7 @@ params <- list(
 
 vars <- c("c", "p")
 custom <- krig(soil_fake, vars, params = params, quiet = TRUE)
-#> Gessing: plotdim = c(1000, 460)
+#> Guessing: plotdim = c(1000, 460)
 
 # Showing only the first item of the resulting output
 to_df(custom)
@@ -67,7 +67,7 @@ Using automated parameters.
 
 ``` r
 result <- krig(soil_fake, var = "c", quiet = TRUE)
-#> Gessing: plotdim = c(1000, 460)
+#> Guessing: plotdim = c(1000, 460)
 summary(result)
 #> var: c 
 #> df

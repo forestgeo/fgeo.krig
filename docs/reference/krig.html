@@ -238,7 +238,7 @@ fitting is not overly biased by points beyond the effective maximum range.</p>
 #&gt; <span class='message'></span>
 #&gt; <span class='message'>    filter</span></div><div class='input'>
 <span class='co'># Using automated parameters</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/summary'>summary</a></span>(<span class='fu'>krig</span>(<span class='no'>soil_fake</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='st'>"c"</span>))</div><div class='output co'>#&gt; <span class='message'>Gessing: plotdim = c(1000, 460)</span></div><div class='output co'>#&gt; <span class='message'></span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/summary'>summary</a></span>(<span class='fu'>krig</span>(<span class='no'>soil_fake</span>, <span class='kw'>var</span> <span class='kw'>=</span> <span class='st'>"c"</span>))</div><div class='output co'>#&gt; <span class='message'>Guessing: plotdim = c(1000, 460)</span></div><div class='output co'>#&gt; <span class='message'></span>
 #&gt; <span class='message'>var: cUsing: gridsize = 20</span></div><div class='output co'>#&gt; <span class='message'>variog: computing omnidirectional variogram</span>
 #&gt; <span class='message'>variofit: covariance model used is exponential </span>
 #&gt; <span class='message'>variofit: weights used: npairs </span>
@@ -334,7 +334,7 @@ fitting is not overly biased by points beyond the effective maximum range.</p>
 
 <span class='co'># Also using not one but multiple soil variables</span>
 <span class='no'>vars</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"p"</span>)
-<span class='no'>custom</span> <span class='kw'>&lt;-</span> <span class='fu'>krig</span>(<span class='no'>soil_fake</span>, <span class='no'>vars</span>, <span class='kw'>params</span> <span class='kw'>=</span> <span class='no'>params</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Gessing: plotdim = c(1000, 460)</span></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/summary'>summary</a></span>(<span class='no'>custom</span>)</div><div class='output co'>#&gt; var: c 
+<span class='no'>custom</span> <span class='kw'>&lt;-</span> <span class='fu'>krig</span>(<span class='no'>soil_fake</span>, <span class='no'>vars</span>, <span class='kw'>params</span> <span class='kw'>=</span> <span class='no'>params</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Guessing: plotdim = c(1000, 460)</span></div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/summary'>summary</a></span>(<span class='no'>custom</span>)</div><div class='output co'>#&gt; var: c 
 #&gt; df
 #&gt; Classes 'tbl_df', 'tbl' and 'data.frame':	1150 obs. of  3 variables:
 #&gt;  $ x: num  10 30 50 70 90 110 130 150 170 190 ...
@@ -435,7 +435,7 @@ fitting is not overly biased by points beyond the effective maximum range.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
    </div>
