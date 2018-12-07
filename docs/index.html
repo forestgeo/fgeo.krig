@@ -18,7 +18,7 @@
 <![endif]-->
 </head>
 <body>
-    <div class="container template-home">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -84,7 +84,11 @@
 
       
       </header><div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
+    
+
+    
+    
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <div id="analyze-soils" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
@@ -115,7 +119,7 @@ devtools::install_github("forestgeo/fgeo.krig")</a></code></pre>
 <a class="sourceLine" id="cb3-4" data-line-number="4"></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5">vars &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"c"</span>, <span class="st">"p"</span>)</a>
 <a class="sourceLine" id="cb3-6" data-line-number="6">custom &lt;-<span class="st"> </span><span class="kw"><a href="reference/krig.html">krig</a></span>(soil_fake, vars, <span class="dt">params =</span> params, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; Gessing: plotdim = c(1000, 460)</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; Guessing: plotdim = c(1000, 460)</span></a>
 <a class="sourceLine" id="cb3-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co"># Showing only the first item of the resulting output</span></a>
 <a class="sourceLine" id="cb3-10" data-line-number="10"><span class="kw"><a href="https://www.rdocumentation.org/packages/fgeo.tool/topics/to_df">to_df</a></span>(custom)</a>
@@ -135,7 +139,7 @@ devtools::install_github("forestgeo/fgeo.krig")</a></code></pre>
 <a class="sourceLine" id="cb3-24" data-line-number="24"><span class="co">#&gt; # ... with 2,290 more rows</span></a></code></pre></div>
 <p>Using automated parameters.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">result &lt;-<span class="st"> </span><span class="kw"><a href="reference/krig.html">krig</a></span>(soil_fake, <span class="dt">var =</span> <span class="st">"c"</span>, <span class="dt">quiet =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Gessing: plotdim = c(1000, 460)</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; Guessing: plotdim = c(1000, 460)</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/summary">summary</a></span>(result)</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt; var: c </span></a>
 <a class="sourceLine" id="cb4-5" data-line-number="5"><span class="co">#&gt; df</span></a>
@@ -216,7 +220,7 @@ devtools::install_github("forestgeo/fgeo.krig")</a></code></pre>
 </div>
   </div>
 
-  <div class="col-md-3" id="sidebar">
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
@@ -246,7 +250,7 @@ devtools::install_github("forestgeo/fgeo.krig")</a></code></pre>
 </ul>
 </div>
 
-  <div class="dev-status">
+      <div class="dev-status">
 <h2>Dev status</h2>
 <ul class="list-unstyled">
 <li><a href="https://www.tidyverse.org/lifecycle/#experimental"><img src="https://img.shields.io/badge/lifecycle-experimental-orange.svg" alt="lifecycle"></a></li>
@@ -256,6 +260,7 @@ devtools::install_github("forestgeo/fgeo.krig")</a></code></pre>
 </ul>
 </div>
 </div>
+
 </div>
 
 
@@ -264,7 +269,7 @@ devtools::install_github("forestgeo/fgeo.krig")</a></code></pre>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
       </footer>
 </div>

@@ -9,7 +9,7 @@
 #' variables.
 #' * Has a method for `summary()`(see examples).
 #' * Has a method for `to_df()` (see examples).
-#' 
+#'
 #' @section Deprecated:
 #' `krig()` evolves from `GetKrigedSoil()`.  `GetKrigedSoil()` has been
 #' deprecated, although it remains in the package as an internal function.
@@ -51,7 +51,7 @@
 #'
 #' @examples
 #' library(fgeo.tool)
-#' 
+#'
 #' # Using automated parameters
 #' summary(krig(soil_fake, var = "c"))
 #'
@@ -66,7 +66,7 @@
 #' summary(custom)
 #'
 #' to_df(custom, name = "soil_var")
-#' 
+#'
 #' tail(to_df(custom, item = "df.poly"))
 krig <- function(soil,
                  var,
@@ -77,9 +77,9 @@ krig <- function(soil,
                  use_ksline = TRUE,
                  quiet = FALSE) {
   force(var)
-  fgeo.base::check_crucial_names(soil, c("gx", "gy"))
-  plotdim <- plotdim %||% fgeo.base::guess_plotdim(soil)
-  
+  fgeo.ctfs::check_crucial_names(soil, c("gx", "gy"))
+  plotdim <- plotdim %||% fgeo.ctfs::guess_plotdim(soil)
+
   out <- lapply(
     var,
     krig_one,
@@ -103,10 +103,10 @@ GetKrigedSoil <- function(df.soil,
     ySize = ySize, breaks = breaks, krigeParams = krigeParams,
     useKsLine = useKsLine
   )
-  
+
   df <- df.soil[, c("gx", "gy", var)]
   names(df)[3] <- "z"
-  
+
   # This follows a similar methodology to the John 2007 paper:
   # 1. the data is transformed based on the optimal boxcox transform
   # 2. a polynomial regression curve is fitted - a second order
@@ -115,18 +115,18 @@ GetKrigedSoil <- function(df.soil,
   #    get a variogram, b) do the kriging
   # 4. the kriged values are added to the polynomial fit and they
   #    are backtranformed as required
-  
+
   # The lambda for the box-cox transform is restricted to 0, 0.5 and 1.
   # Data with 0's in there are handled by the addition of a small constant
   # in the regression
   bc <- BoxCoxTransformSoil(df)
   df <- bc$df
-  
+
   polyfit <- GetPolynomialFit(
     df,
     gridSize = gridSize, xSize = xSize, ySize = ySize
   )
-  
+
   # Get the variogram parameters
   # If a polynomial fit was possible then the parameters come from
   # the residuals of the polynomial fit
@@ -138,7 +138,7 @@ GetKrigedSoil <- function(df.soil,
   } else {
     df.krig <- cbind(polyfit$df.orig[, c("gx", "gy")], z = resid(polyfit$mod))
   }
-  
+
   geod <- as.geodata(df.krig)
   if (is.null(krigeParams)) {
     params <- krig_auto_params(geod, breaks = breaks)
@@ -148,7 +148,7 @@ GetKrigedSoil <- function(df.soil,
       params$kappa <- 0
     }
   }
-  
+
   # Do the kriging
   if (useKsLine) {
     krig <- krig_ksline(
@@ -181,12 +181,12 @@ GetKrigedSoil <- function(df.soil,
   } else {
     df.pred$z <- df.pred$z + krig$predict
   }
-  
+
   # Back transform (if required)
   df.pred <- InvBoxCoxTransformSoil(df.pred, bc$lambda, bc$delta)
-  
+
   names(df.pred) <- c("x", "y", "z")
-  
+
   # Return all useful data
   list(
     df = fgeo.tool::as_tibble(df.pred),
@@ -280,7 +280,7 @@ krig_auto_params <- function(geodata,
 GetPolynomialFit <- function(df, gridSize = 20, xSize = 1000, ySize = 500) {
   # The data frame is assumed to be x, y, z
   names(df) <- c("gx", "gy", "z")
-  
+
   model <- NULL
   tryCatch(
     model <- nls(
@@ -300,7 +300,7 @@ GetPolynomialFit <- function(df, gridSize = 20, xSize = 1000, ySize = 500) {
     error = function(e) {
     }
   )
-  
+
   halfGrid <- gridSize / 2
   df.locations <- expand.grid(
     gx = seq(halfGrid, xSize - halfGrid, by = gridSize),
@@ -309,7 +309,7 @@ GetPolynomialFit <- function(df, gridSize = 20, xSize = 1000, ySize = 500) {
   if (!is.null(model)) {
     df.locations$z <- predict(model, newdata = df.locations)
   }
-  
+
   list(df.orig = df, df.interpolated = df.locations, mod = model)
 }
 
@@ -340,13 +340,13 @@ PolynomialSurfaceOrder2 <- function(x, y, a, b, c, d, e, f) {
 BoxCoxTransformSoil <- function(df) {
   lambda <- 1
   delta <- 0
-  
+
   if (ncol(df) >= 3) {
     # Sanity checking and enforcement of the structure
     if (!identical(names(df)[1:3], c("gx", "gy", "z"))) {
       names(df)[1:3] <- c("gx", "gy", "z")
     }
-    
+
     if (min(df$z) >= 0) {
       # boxcox will complain about -ve values
       if (min(df$z) == 0) {
@@ -396,7 +396,7 @@ InvBoxCoxTransformSoil <- function(df, lambda, delta) {
   }
   # Take away the delta offset
   df$z <- df$z - delta
-  
+
   df
 }
 
@@ -409,10 +409,10 @@ krig_one <- function(soil,
                      use_ksline = TRUE,
                      quiet = FALSE) {
   krig_msg <- function() {
-    
-    plotdim <- plotdim %||% fgeo.base::guess_plotdim(soil)
+
+    plotdim <- plotdim %||% fgeo.ctfs::guess_plotdim(soil)
     message("\nvar: ", var, "Using: gridsize = ", gridsize)
-    
+
     krig_with_message <- enable_quiet(GetKrigedSoil)
     krig <- krig_with_message(
       df.soil = soil,
