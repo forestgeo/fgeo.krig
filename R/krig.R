@@ -77,8 +77,8 @@ krig <- function(soil,
                  use_ksline = TRUE,
                  quiet = FALSE) {
   force(var)
-  fgeo.ctfs::check_crucial_names(soil, c("gx", "gy"))
-  plotdim <- plotdim %||% fgeo.ctfs::guess_plotdim(soil)
+  fgeo.tool::check_crucial_names(soil, c("gx", "gy"))
+  plotdim <- plotdim %||% fgeo.tool::guess_plotdim(soil)
 
   out <- lapply(
     var,
@@ -410,7 +410,7 @@ krig_one <- function(soil,
                      quiet = FALSE) {
   krig_msg <- function() {
 
-    plotdim <- plotdim %||% fgeo.ctfs::guess_plotdim(soil)
+    plotdim <- plotdim %||% fgeo.tool::guess_plotdim(soil)
     message("\nvar: ", var, "Using: gridsize = ", gridsize)
 
     krig_with_message <- enable_quiet(GetKrigedSoil)
