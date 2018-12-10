@@ -1,10 +1,7 @@
-library(dplyr)
-library(fgeo.ctfs)
-
 # Small dataset that still preserves plot dimensions via guess_plotdim()
 df0 <- fgeo.krig::soil_random
-df_gx <- tail(arrange(df0, gx))
-df_gy <- tail(arrange(df0, gy))
+df_gx <- tail(dplyr::arrange(df0, gx))
+df_gy <- tail(dplyr::arrange(df0, gy))
 df <- rbind(df_gx, df_gy)
 
 
@@ -14,7 +11,7 @@ context("krig")
 # Keep despite guess_plotdim() is externa. What matters here is not the function
 # but the value it returs. Else, the output of krig and friends will change.
 test_that("plotdimensions are guessed correctly", {
-  expect_equal(guess_plotdim(df), c(1000, 500))
+  expect_equal(fgeo.tool::guess_plotdim(df), c(1000, 500))
 })
 
 vars <- c("c", "p")
@@ -85,7 +82,7 @@ test_that("outputs the same with plotdim given directly or via guess_plotdim", {
     )[[1]],
     krig(
       soil_random, "m3al",
-      quiet = TRUE, plotdim = guess_plotdim(soil_random),
+      quiet = TRUE, plotdim = fgeo.tool::guess_plotdim(soil_random),
     )[[1]]
   )
 })
