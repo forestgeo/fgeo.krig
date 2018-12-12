@@ -27,8 +27,6 @@ article](https://goo.gl/dQKEeg).
 ## Example
 
 ``` r
-library(dplyr)
-library(fgeo.tool)
 library(fgeo.krig)
 ```
 

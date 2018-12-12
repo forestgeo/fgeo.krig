@@ -27,7 +27,8 @@ Imports:
     glue,
     MASS,
     rlang,
-    stats
+    stats,
+    tibble
 Suggests: 
     covr,
     dplyr,
