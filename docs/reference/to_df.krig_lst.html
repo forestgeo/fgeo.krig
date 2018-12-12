@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • fgeo.krig</title>
+<title>Dataframe objects of class "krig_lst". — to_df.krig_lst • fgeo.krig</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,11 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Dataframe objects of class "krig_lst". — to_df.krig_lst" />
+
+<meta property="og:description" content="This method creates a dataframe from the output of fgeo.krig::krig()
+(which is a list of class &quot;krig_lst&quot;)." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -115,78 +119,79 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Dataframe objects of class "krig_lst".</h1>
+    <small class="dont-index">Source: <a href='https://github.com/forestgeo/fgeo.krig/blob/master/R/to_df.R'><code>R/to_df.R</code></a></small>
+    <div class="hidden name"><code>to_df.krig_lst.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>This method creates a dataframe from the output of <code><a href='krig.html'>fgeo.krig::krig()</a></code>
+(which is a list of class "krig_lst").</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="krig.html">krig()</a></code> </p>
-        </td>
-        <td><p>Krige soil data following the methodology of the John et al. (2007).</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="krig_auto_params.html">krig_auto_params()</a></code> </p>
-        </td>
-        <td><p>Find "best" variogram parameters.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="krig_breaks.html">krig_breaks()</a></code> </p>
-        </td>
-        <td><p>Sequence of n exponentially increasing values.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="soil_fake.html">soil_fake</a></code> </p>
-        </td>
-        <td><p>Fake soil data with multiple soil variables.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="soil_random.html">soil_random</a></code> </p>
-        </td>
-        <td><p>Soil data for examples.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary.krig_lst.html">summary(<i>&lt;krig_lst&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summary objects of class "krig_lst".</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="to_df.krig_lst.html">to_df(<i>&lt;krig_lst&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Dataframe objects of class "krig_lst".</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='co'># S3 method for krig_lst</span>
+<span class='fu'><a href='to_df.html'>to_df</a></span>(<span class='no'>.x</span>, <span class='kw'>name</span> <span class='kw'>=</span> <span class='st'>"var"</span>, <span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"df"</span>, <span class='no'>...</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>.x</th>
+      <td><p>The output of <code><a href='krig.html'>fgeo.krig::krig()</a></code>.`</p></td>
+    </tr>
+    <tr>
+      <th>name</th>
+      <td><p>Name for the column to hold soil variable-names.</p></td>
+    </tr>
+    <tr>
+      <th>item</th>
+      <td><p>Character string; either "df" or "df.poly".</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Arguments passed on to <code>to_df</code></p><dl class='dl-horizontal'>
+  <dt>.x</dt><dd><p>An fgeo object of supported class.</p></dd>
+</dl></td>
+    </tr>
     </table>
-  </div>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
+    <p>A dataframe.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='to_df.html'>to_df()</a></code>.</p></div>
+    
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='kw'>if</span> (!<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/ns-load'>requireNamespace</a></span>(<span class='st'>"fgeo.krig"</span>)) {
+  <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/stop'>stop</a></span>(<span class='st'>"This example requires fgeo.krig. Please install it"</span>)
+}
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>fgeo.krig</span>)
+
+<span class='no'>vars</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"p"</span>)
+<span class='no'>krig</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='krig.html'>krig</a></span>(<span class='no'>soil_fake</span>, <span class='no'>vars</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'><a href='to_df.html'>to_df</a></span>(<span class='no'>krig</span>)
+<span class='co'># }</span></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      
+      <li><a href="#value">Value</a></li>
+
+      <li><a href="#see-also">See also</a></li>
+      
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 

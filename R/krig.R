@@ -47,7 +47,7 @@
 #' @author Graham Zemunik (grah.zem@@gmail.com).
 #'
 #' @export
-#' @seealso [fgeo.tool::to_df.krig_lst()].
+#' @seealso [to_df.krig_lst()].
 #'
 #' @examples
 #' library(fgeo.tool)

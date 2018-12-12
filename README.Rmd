@@ -36,8 +36,6 @@ For details on how to install packages from GitHub, see [this article](https://g
 ## Example
 
 ```{r, warning=FALSE, message=FALSE}
-library(dplyr)
-library(fgeo.tool)
 library(fgeo.krig)
 ```
 
