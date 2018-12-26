@@ -31,7 +31,6 @@ Imports:
 Suggests: 
     covr,
     dplyr,
-    fgeo.map,
     ggplot2,
     knitr,
     purrr,
@@ -42,7 +41,6 @@ Suggests:
 VignetteBuilder: 
     knitr
 Remotes: 
-    forestgeo/fgeo.map,
     forestgeo/fgeo.tool,
     forestgeo/fgeo.x
 Encoding: UTF-8
