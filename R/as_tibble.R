@@ -46,6 +46,10 @@ as.data.frame.krig_lst <- function(x,
                                    .id = "var",
                                    item = "df",
                                    ...) {
-  tbl <- as_tibble(x, name = .id, item = item)
-  as.data.frame(unclass(tbl), ...)
+  tbl <- as_tibble(x, .id = .id, item = item)
+  as.data.frame(
+    unclass(tbl),
+    row.names = row.names,
+    optional = optional, ...
+  )
 }
