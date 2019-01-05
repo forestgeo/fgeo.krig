@@ -53,8 +53,8 @@ Use \code{krig()} to krige soil data following the methodology of the John et al
 \item Allows to suppress messages.
 \item Is vectorized over the argument \code{var}, to easily iterate over multiple soil
 variables.
-\item Has a method for \code{summary()}(see examples).
-\item Has a method for \code{to_df()} (see examples).
+\item Has a method for \code{\link[base:summary]{base::summary()}} (see examples).
+\item Has a method for \code{\link[tibble:as_tibble]{tibble::as_tibble()}} (see examples).
 }
 }
 \section{Deprecated}{
@@ -86,15 +86,13 @@ vars <- c("c", "p")
 custom <- krig(soil_fake, vars, params = params, quiet = TRUE)
 summary(custom)
 
-to_df(custom, name = "soil_var")
+as_tibble(custom, name = "soil_var")
 
-tail(to_df(custom, item = "df.poly"))
+tail(as_tibble(custom, item = "df.poly"))
 }
 \seealso{
 \code{\link[geoR:variofit]{geoR::variofit()}}, \code{\link[geoR:variog]{geoR::variog()}}, \code{\link[geoR:as.geodata]{geoR::as.geodata()}},
 \code{\link[geoR:ksline]{geoR::ksline()}}, \code{\link[geoR:krige.conv]{geoR::krige.conv()}}, \code{geoR::krige.control()}.
-
-\code{\link[=to_df.krig_lst]{to_df.krig_lst()}}.
 }
 \author{
 Graham Zemunik (grah.zem@gmail.com).

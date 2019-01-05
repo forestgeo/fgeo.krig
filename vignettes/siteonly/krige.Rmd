@@ -6,8 +6,10 @@ date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Krige soil data}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include = FALSE}
@@ -35,7 +37,7 @@ library(fgeo.krig)
 ```
 
 ```{r}
-soil <- soil_random
+soil <- fgeo.krig::soil_random
 str(soil)
 ```
 
@@ -49,7 +51,7 @@ summary(auto)
 ```
 
 ```{r}
-to_df(auto)
+as_tibble(auto)
 ```
 
 Try also:
@@ -73,13 +75,13 @@ Compare.
 
 ```{r, fig.align="default", out.width="45%", fig.widh=(6 * 0.5 / 0.7)}
 title_auto <- "Automated parameters"
-ggplot(to_df(auto), aes(x = x, y = y, fill = z)) +
+ggplot(as_tibble(auto), aes(x = x, y = y, fill = z)) +
   geom_tile() + 
   coord_equal() +
   labs(title = title_auto)
 
 title_custom <- "Custom parameters"
-ggplot(to_df(custom), aes(x = x, y = y, fill = z)) +
+ggplot(as_tibble(custom), aes(x = x, y = y, fill = z)) +
   geom_tile() + 
   coord_equal() +
   labs(title = title_custom)
@@ -88,7 +90,7 @@ ggplot(to_df(custom), aes(x = x, y = y, fill = z)) +
 ### Iterate over multiple soil variables
 
 ```{r}
-soil <- soil_fake
+soil <- fgeo.krig::soil_fake
 soil
 ```
 
@@ -97,33 +99,28 @@ Scale soil data to make their values fall within the same range. This is not cru
 ```{r}
 soil_vars <- c("mg", "c", "p")
 soil_scaled <- modify_at(soil_fake, .at = soil_vars, scale)
+
+krig_list <- krig(soil_scaled, soil_vars, quiet = TRUE)
+
+summary(krig_list)
 ```
+
+Transform krig results to a tibble for easier manipulation and visualization.
 
 ```{r}
-# krig() can take multiple soil variables.
-out_lst <- krig(soil_scaled, soil_vars, quiet = TRUE)
+# as.data.frame(krig_list) also works but is hader to visualize
+(krig_df <- as_tibble(krig_list))
 
-# Overview results of one var
-summary(out_lst)
+tail(krig_df)
 ```
-
-Transform krig results to a dataframe for easier manipulation and visualization.
-
-```{r}
-out_df <- to_df(out_lst, name = "soil_var")
-out_df
-
-tail(out_df)
-```
-
 
 ### Visualize multiple soil variables
 
 The structure of this dataframe allows faceting with __gglot2__.
 
 ```{r out.width="90%"}
-ggplot(out_df, aes(x, y, fill = z)) +
+ggplot(krig_df, aes(x, y, fill = z)) +
   geom_tile() +
-  facet_wrap("soil_var") +
+  facet_wrap("var") +
   coord_equal()
 ```

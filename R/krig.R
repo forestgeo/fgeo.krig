@@ -7,8 +7,8 @@
 #' * Allows to suppress messages.
 #' * Is vectorized over the argument `var`, to easily iterate over multiple soil
 #' variables.
-#' * Has a method for `summary()`(see examples).
-#' * Has a method for `to_df()` (see examples).
+#' * Has a method for [base::summary()] (see examples).
+#' * Has a method for [tibble::as_tibble()] (see examples).
 #'
 #' @section Deprecated:
 #' `krig()` evolves from `GetKrigedSoil()`.  `GetKrigedSoil()` has been
@@ -46,9 +46,6 @@
 #'
 #' @author Graham Zemunik (grah.zem@@gmail.com).
 #'
-#' @export
-#' @seealso [to_df.krig_lst()].
-#'
 #' @examples
 #' library(fgeo.tool)
 #'
@@ -65,9 +62,10 @@
 #' custom <- krig(soil_fake, vars, params = params, quiet = TRUE)
 #' summary(custom)
 #'
-#' to_df(custom, name = "soil_var")
+#' as_tibble(custom, name = "soil_var")
 #'
-#' tail(to_df(custom, item = "df.poly"))
+#' tail(as_tibble(custom, item = "df.poly"))
+#' @export
 krig <- function(soil,
                  var,
                  params = NULL,
