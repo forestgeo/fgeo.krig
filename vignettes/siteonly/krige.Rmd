@@ -90,7 +90,7 @@ ggplot(as_tibble(custom), aes(x = x, y = y, fill = z)) +
 ### Iterate over multiple soil variables
 
 ```{r}
-soil <- soil_fake
+soil <- fgeo.krig::soil_fake
 soil
 ```
 
@@ -108,7 +108,7 @@ summary(krig_list)
 Transform krig results to a tibble for easier manipulation and visualization.
 
 ```{r}
-# as_tibble(krig_list) also works but is hader to visualize
+# as.data.frame(krig_list) also works but is hader to visualize
 (krig_df <- as_tibble(krig_list))
 
 tail(krig_df)

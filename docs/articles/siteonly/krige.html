@@ -227,7 +227,7 @@
 <div id="iterate-over-multiple-soil-variables" class="section level3">
 <h3 class="hasAnchor">
 <a href="#iterate-over-multiple-soil-variables" class="anchor"></a>Iterate over multiple soil variables</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">soil &lt;-<span class="st"> </span>soil_fake</a>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">soil &lt;-<span class="st"> </span>fgeo.krig<span class="op">::</span>soil_fake</a>
 <a class="sourceLine" id="cb8-2" data-line-number="2">soil</a>
 <a class="sourceLine" id="cb8-3" data-line-number="3"><span class="co">#&gt; # A tibble: 30 x 5</span></a>
 <a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#&gt;       gx    gy    mg     c     p</span></a>
@@ -437,7 +437,7 @@
 <a class="sourceLine" id="cb9-191" data-line-number="191"><span class="co">#&gt;  $ message              : chr "optim convergence code: 0"</span></a>
 <a class="sourceLine" id="cb9-192" data-line-number="192"><span class="co">#&gt;  $ call                 : language variofit(vario = vg, ini.cov.pars = c(initialVal, startRange), cov.model = varModels[i],      nugget = initialVal)</span></a></code></pre></div>
 <p>Transform krig results to a tibble for easier manipulation and visualization.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># as_tibble(krig_list) also works but is hader to visualize</span></a>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="co"># as.data.frame(krig_list) also works but is hader to visualize</span></a>
 <a class="sourceLine" id="cb10-2" data-line-number="2">(krig_df &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/tibble/topics/as_tibble">as_tibble</a></span>(krig_list))</a>
 <a class="sourceLine" id="cb10-3" data-line-number="3"><span class="co">#&gt; # A tibble: 3,450 x 4</span></a>
 <a class="sourceLine" id="cb10-4" data-line-number="4"><span class="co">#&gt;    var       x     y       z</span></a>
