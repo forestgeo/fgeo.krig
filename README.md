@@ -44,7 +44,7 @@ custom <- krig(soil_fake, vars, params = params, quiet = TRUE)
 #> Guessing: plotdim = c(1000, 460)
 
 # Showing only the first item of the resulting output
-to_df(custom)
+as_tibble(custom)
 #> # A tibble: 2,300 x 4
 #>    var       x     y     z
 #>    <chr> <dbl> <dbl> <dbl>

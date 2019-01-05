@@ -52,7 +52,7 @@ vars <- c("c", "p")
 custom <- krig(soil_fake, vars, params = params, quiet = TRUE)
 
 # Showing only the first item of the resulting output
-to_df(custom)
+as_tibble(custom)
 ```
 
 Using automated parameters.

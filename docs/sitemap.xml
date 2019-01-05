@@ -4,6 +4,9 @@
     <loc>https://forestgeo.github.io/fgeo.krig//index.html</loc>
   </url>
   <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/as_tibble.krig_lst.html</loc>
+  </url>
+  <url>
     <loc>https://forestgeo.github.io/fgeo.krig//reference/krig.html</loc>
   </url>
   <url>
@@ -13,6 +16,9 @@
     <loc>https://forestgeo.github.io/fgeo.krig//reference/krig_breaks.html</loc>
   </url>
   <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/reexports.html</loc>
+  </url>
+  <url>
     <loc>https://forestgeo.github.io/fgeo.krig//reference/soil_fake.html</loc>
   </url>
   <url>
@@ -20,12 +26,6 @@
   </url>
   <url>
     <loc>https://forestgeo.github.io/fgeo.krig//reference/summary.krig_lst.html</loc>
-  </url>
-  <url>
-    <loc>https://forestgeo.github.io/fgeo.krig//reference/to_df.krig_lst.html</loc>
-  </url>
-  <url>
-    <loc>https://forestgeo.github.io/fgeo.krig//reference/to_df.html</loc>
   </url>
   <url>
     <loc>https://forestgeo.github.io/fgeo.krig//articles/siteonly/krige.html</loc>
