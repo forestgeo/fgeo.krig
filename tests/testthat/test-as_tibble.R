@@ -35,3 +35,12 @@ test_that("as.data.frame.krig_lst takes arguments via `...`", {
     "character"
   )
 })
+
+test_that("as.data.frame.krig_lst is sensitive to `.id`", {
+  krig_result <- krig(soil_fake, "c", quiet = TRUE)
+
+  expect_named(
+    head(as.data.frame(krig_result, .id = "custom")),
+    c("custom", "x", "y", "z")
+  )
+})
