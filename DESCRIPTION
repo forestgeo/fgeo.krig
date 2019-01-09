@@ -42,7 +42,7 @@ VignetteBuilder:
     knitr
 Remotes: 
     forestgeo/fgeo.tool,
-    forestgeo/fgeo.x
+    forestgeo/fgeo.x@*release
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
