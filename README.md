@@ -130,8 +130,7 @@ summary(result)
 #>  $ call                 : language variofit(vario = vg, ini.cov.pars = c(initialVal, startRange), cov.model = varModels[i],      nugget = initialVal)
 ```
 
-[Get started with
-**fgeo**](https://forestgeo.github.io/fgeo/articles/fgeo.html)
+[Get started with **fgeo**](https://forestgeo.github.io/fgeo)
 
 ## Information
 

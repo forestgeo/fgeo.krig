@@ -62,7 +62,7 @@ result <- krig(soil_fake, var = "c", quiet = TRUE)
 summary(result)
 ```
 
-[Get started with __fgeo__](https://forestgeo.github.io/fgeo/articles/fgeo.html)
+[Get started with __fgeo__](https://forestgeo.github.io/fgeo)
 
 ## Information
 
