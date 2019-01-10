@@ -134,7 +134,7 @@
     </div>
 
     <pre class="usage"><span class='co'># S3 method for krig_lst</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/tibble/topics/as_tibble'>as_tibble</a></span>(<span class='no'>x</span>, <span class='kw'>.id</span> <span class='kw'>=</span> <span class='st'>"var"</span>, <span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"df"</span>, <span class='no'>...</span>)
+<span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span>(<span class='no'>x</span>, <span class='kw'>.id</span> <span class='kw'>=</span> <span class='st'>"var"</span>, <span class='kw'>item</span> <span class='kw'>=</span> <span class='st'>"df"</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for krig_lst</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>as.data.frame</a></span>(<span class='no'>x</span>, <span class='kw'>row.names</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>optional</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
@@ -183,13 +183,13 @@
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>base::as.data.frame()</a></code>, <code><a href='https://www.rdocumentation.org/packages/tibble/topics/as_tibble'>tibble::as_tibble()</a></code>.</p></div>
+    <div class='dont-index'><p><code><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>base::as.data.frame()</a></code>, <code><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>tibble::as_tibble()</a></code>.</p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>vars</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='st'>"c"</span>, <span class='st'>"p"</span>)
 <span class='no'>krig</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='krig.html'>krig</a></span>(<span class='no'>soil_fake</span>, <span class='no'>vars</span>, <span class='kw'>quiet</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='output co'>#&gt; <span class='message'>Guessing: plotdim = c(1000, 460)</span></div><div class='input'>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/tibble/topics/as_tibble'>as_tibble</a></span>(<span class='no'>krig</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 2,300 x 4</span><span>
+<span class='fu'><a href='https://tibble.tidyverse.org/reference/as_tibble.html'>as_tibble</a></span>(<span class='no'>krig</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 2,300 x 4</span><span>
 #&gt;    var       x     y     z
 #&gt;    </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
 #&gt; </span><span style='color: #555555;'> 1</span><span> c        10    10  2.13
