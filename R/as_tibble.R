@@ -18,16 +18,10 @@
 #' @examples
 #' vars <- c("c", "p")
 #' krig <- krig(soil_fake, vars, quiet = TRUE)
-#' 
+#'
 #' as_tibble(krig)
-#' 
-#' df <- as.data.frame(krig)
-#' head(df)
-#' class(df$var)
-#' 
-#' df2 <- as.data.frame(krig, stringsAsFactors = FALSE)
-#' head(df2)
-#' class(df2$var)
+#'
+#' head(as.data.frame(krig, stringsAsFactors = FALSE))
 #' @family methods for fgeo generics
 #' @export
 as_tibble.krig_lst <- function(x, .id = "var", item = "df", ...) {
