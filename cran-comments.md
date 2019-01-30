@@ -8,12 +8,17 @@
 
 1.0.0
 
-WARNING
+NOTE
 New submission
 Strong dependencies not in mainstream repositories:
   fgeo.tool
 Availability using Additional_repositories specification:
   fgeo.tool   yes   https://forestgeo.github.io/drat/
+
+NOTE
+Examples with CPU or elapsed time > 5s
+                    user system elapsed
+as_tibble.krig_lst 2.732  0.144   8.169
 
 ## Downstream dependencies
 
