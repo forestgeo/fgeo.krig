@@ -38,8 +38,6 @@ Suggests:
     tidyr,
     spelling
 Additional_repositories: https://forestgeo.github.io/drat/
-VignetteBuilder: 
-    knitr
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

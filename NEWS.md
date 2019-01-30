@@ -2,6 +2,13 @@
 
 * Work in progress.
 
-# fgeo.krig 1.0.0 (GitHub release)
+* Style.
+* Use Additional_repositories.
+* Prune Imports.
+* Use news.
+* Use cran comments.
+* Update site.
+
+# fgeo.krig 1.0.0 (GitHub and drat release)
 
 * Initial release.

@@ -18,7 +18,8 @@ krig_ksline <- function(geodata, coords = geodata$coords, data = geodata$data,
     messages.screen <- messages
   }
   locations <- .check.locations(locations)
-  if (length(unique(locations[, 1])) == 1 | length(unique(locations[ , 2])) == 1) {
+  if (length(unique(locations[, 1])) == 1 |
+      length(unique(locations[, 2])) == 1) {
     krige1d <- TRUE
   } else {
     krige1d <- FALSE
@@ -106,7 +107,8 @@ krig_ksline <- function(geodata, coords = geodata$coords, data = geodata$data,
           xmati <- cbind(rep(1, ni), locations[, 2])
         }
         else {
-          xmat <- cbind(rep(1, n), coords[, 1], coords[
+          xmat <- cbind(rep(1, n), coords[, 1], coords
+          [
             ,
             2
           ])
@@ -122,7 +124,8 @@ krig_ksline <- function(geodata, coords = geodata$coords, data = geodata$data,
       }
       if (m0 == "kt" & trend == 2) {
         if (d == 1) {
-          xmat <- cbind(rep(1, n), coords[, 2], (coords[
+          xmat <- cbind(rep(1, n), coords[, 2], (coords
+          [
             ,
             2
           ])^2)
@@ -132,16 +135,19 @@ krig_ksline <- function(geodata, coords = geodata$coords, data = geodata$data,
           )
         }
         else {
-          xmat <- cbind(rep(1, n), coords[, 1], coords[
+          xmat <- cbind(rep(1, n), coords[, 1], coords
+          [
             ,
             2
-          ], (coords[, 1])^2, (coords[, 2])^2, coords[
+          ], (coords[, 1])^2, (coords[, 2])^2, coords
+          [
             ,
             1
           ] * coords[, 2])
           xmati <- cbind(
             rep(1, ni), locations[, 1],
-            locations[, 2], (locations[, 1])^2, (locations[
+            locations[, 2], (locations[, 1])^2, (locations
+            [
               ,
               2
             ])^2, locations[, 1] * locations[, 2]
@@ -317,7 +323,8 @@ krig_ksline <- function(geodata, coords = geodata$coords, data = geodata$data,
         if (d == 1) {
           xmati <- cbind(rep(1, ni), locations[, 2])
         } else {
-          xmati <- cbind(rep(1, ni), locations[
+          xmati <- cbind(rep(1, ni), locations
+          [
             ,
             1
           ], locations[, 2])
@@ -330,10 +337,12 @@ krig_ksline <- function(geodata, coords = geodata$coords, data = geodata$data,
             locations[, 2]^2
           )
         } else {
-          xmati <- cbind(rep(1, ni), locations[
+          xmati <- cbind(rep(1, ni), locations
+          [
             ,
             1
-          ], locations[, 2], (locations[, 1])^2, (locations[
+          ], locations[, 2], (locations[, 1])^2, (locations
+          [
             ,
             2
           ])^2, locations[, 1] * locations[, 2])
