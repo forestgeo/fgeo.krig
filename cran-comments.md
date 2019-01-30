@@ -6,7 +6,14 @@
 
 ## R CMD check results
 
-TODO
+1.0.0
+
+WARNING
+New submission
+Strong dependencies not in mainstream repositories:
+  fgeo.tool
+Availability using Additional_repositories specification:
+  fgeo.tool   yes   https://forestgeo.github.io/drat/
 
 ## Downstream dependencies
 
