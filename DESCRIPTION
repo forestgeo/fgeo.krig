@@ -23,23 +23,24 @@ Imports:
     fgeo.tool,
     geoR,
     MASS,
+    purrr,
     rlang,
     stats,
-    purrr,
     tibble
 Suggests: 
     covr,
     dplyr,
     ggplot2,
     knitr,
+    lattice,
     rmarkdown,
+    spelling,
     stringr,
     testthat,
-    tidyr,
-    spelling
+    tidyr
 Additional_repositories: https://forestgeo.github.io/drat/
 Encoding: UTF-8
+Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
-Language: en-US
