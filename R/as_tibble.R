@@ -18,13 +18,13 @@
 #' @examples
 #' vars <- c("c", "p")
 #' krig <- krig(soil_fake, vars, quiet = TRUE)
-#'
+#' 
 #' as_tibble(krig)
-#'
+#' 
 #' df <- as.data.frame(krig)
 #' head(df)
 #' class(df$var)
-#'
+#' 
 #' df2 <- as.data.frame(krig, stringsAsFactors = FALSE)
 #' head(df2)
 #' class(df2$var)

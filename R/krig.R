@@ -48,22 +48,22 @@
 #'
 #' @examples
 #' library(fgeo.tool)
-#'
+#' 
 #' # Using automated parameters
 #' summary(krig(soil_fake, var = "c"))
-#'
+#' 
 #' # Now using custom parameters (arbitrary but based on automated kriging params)
 #' params <- list(
 #'   model = "circular", range = 100, nugget = 1000, sill = 46000, kappa = 0.5
 #' )
-#'
+#' 
 #' # Also using not one but multiple soil variables
 #' vars <- c("c", "p")
 #' custom <- krig(soil_fake, vars, params = params, quiet = TRUE)
 #' summary(custom)
-#'
+#' 
 #' as_tibble(custom, name = "soil_var")
-#'
+#' 
 #' tail(as_tibble(custom, item = "df.poly"))
 #' @export
 krig <- function(soil,
@@ -227,8 +227,8 @@ GetKrigedSoil <- function(df.soil,
 #'
 #' @export
 krig_auto_params <- function(geodata,
-  trend = "cte",
-  breaks = krig_breaks(2, 320, 30)) {
+                             trend = "cte",
+                             breaks = krig_breaks(2, 320, 30)) {
   vg <- variog(geodata, breaks = breaks, pairs.min = 5, trend = trend)
   varModels <- c("exponential", "circular", "cauchy", "gaussian")
   minValue <- NULL
@@ -407,7 +407,6 @@ krig_one <- function(soil,
                      use_ksline = TRUE,
                      quiet = FALSE) {
   krig_msg <- function() {
-
     plotdim <- plotdim %||% fgeo.tool::guess_plotdim(soil)
     message("\nvar: ", var, "Using: gridsize = ", gridsize)
 
