@@ -1,6 +1,6 @@
 Package: fgeo.krig
 Title: Analyze Soils Data
-Version: 0.0.0.9007
+Version: 1.0.0
 Authors@R: 
     c(person(given = "Mauro",
              family = "Lepore",
@@ -21,29 +21,27 @@ Depends:
     R (>= 3.2)
 Imports: 
     fgeo.tool,
-    fgeo.x,
     geoR,
-    glue,
     MASS,
     rlang,
     stats,
+    purrr,
     tibble
 Suggests: 
     covr,
     dplyr,
     ggplot2,
     knitr,
-    purrr,
     rmarkdown,
     stringr,
     testthat,
-    tidyr
+    tidyr,
+    spelling
+Additional_repositories: https://forestgeo.github.io/drat/
 VignetteBuilder: 
     knitr
-Remotes: 
-    forestgeo/fgeo.tool@*release,
-    forestgeo/fgeo.x@*release
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
+Language: en-US

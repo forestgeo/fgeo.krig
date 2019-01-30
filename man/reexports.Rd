@@ -4,6 +4,7 @@
 \name{reexports}
 \alias{reexports}
 \alias{as_tibble}
+\alias{assert_is_installed}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
@@ -11,6 +12,8 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
+  \item{fgeo.tool}{\code{\link[fgeo.tool]{assert_is_installed}}}
+
   \item{tibble}{\code{\link[tibble]{as_tibble}}}
 }}
 
