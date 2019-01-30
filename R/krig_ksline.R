@@ -18,10 +18,7 @@ krig_ksline <- function(geodata, coords = geodata$coords, data = geodata$data,
     messages.screen <- messages
   }
   locations <- .check.locations(locations)
-  if (length(unique(locations[, 1])) == 1 | length(unique(locations[
-    ,
-    2
-  ])) == 1) {
+  if (length(unique(locations[, 1])) == 1 | length(unique(locations[ , 2])) == 1) {
     krige1d <- TRUE
   } else {
     krige1d <- FALSE
