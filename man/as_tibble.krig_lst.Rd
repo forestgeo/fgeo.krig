@@ -44,13 +44,7 @@ krig <- krig(soil_fake, vars, quiet = TRUE)
 
 as_tibble(krig)
 
-df <- as.data.frame(krig)
-head(df)
-class(df$var)
-
-df2 <- as.data.frame(krig, stringsAsFactors = FALSE)
-head(df2)
-class(df2$var)
+head(as.data.frame(krig, stringsAsFactors = FALSE))
 }
 \seealso{
 \code{\link[base:as.data.frame]{base::as.data.frame()}}, \code{\link[tibble:as_tibble]{tibble::as_tibble()}}.

@@ -120,4 +120,3 @@ test_that("check_GetKrigSoil() fails with wrong input", {
   bad_not_logical <- "a"
   expect_error(krig(df, var = "m3al", useKsLine = bad_not_logical))
 })
-

@@ -3,10 +3,10 @@
 #' This method helps you to visualize the output of `krig()` (which outputs
 #' objects of class "krig_lst"). It is similar to [utils::str()] but a little
 #' cleaner. version of `str()`.
-#' 
+#'
 #' @param object The result of `krig()`.
 #' @inheritDotParams base::summary
-#' 
+#'
 #' @family methods for common generics
 #'
 #' @return Prints a cleaner version of `str()` and returns its input invisibly.
