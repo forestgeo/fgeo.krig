@@ -1,4 +1,4 @@
-# fgeo.plot (development version)
+# fgeo.krig (development version)
 
 * Work in progress.
 
