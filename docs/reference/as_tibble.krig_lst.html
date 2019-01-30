@@ -64,7 +64,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">fgeo.krig</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9007</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
       </span>
     </div>
 
@@ -90,6 +90,9 @@
       <a href="../articles/siteonly/krige.html">Krige soil data</a>
     </li>
   </ul>
+</li>
+<li>
+  <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -203,22 +206,13 @@
 #&gt; </span><span style='color: #555555;'> 9</span><span> c       170    10  2.01
 #&gt; </span><span style='color: #555555;'>10</span><span> c       190    10  2.00
 #&gt; </span><span style='color: #555555;'># ... with 2,290 more rows</span><span></div><div class='input'>
-<span class='no'>df</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>as.data.frame</a></span>(<span class='no'>krig</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/head'>head</a></span>(<span class='no'>df</span>)</div><div class='output co'>#&gt;   var   x  y        z
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/head'>head</a></span>(<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>as.data.frame</a></span>(<span class='no'>krig</span>, <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))</div><div class='output co'>#&gt;   var   x  y        z
 #&gt; 1   c  10 10 2.134696
 #&gt; 2   c  30 10 2.119651
 #&gt; 3   c  50 10 2.104591
 #&gt; 4   c  70 10 2.089517
 #&gt; 5   c  90 10 2.074427
-#&gt; 6   c 110 10 2.059322</div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/class'>class</a></span>(<span class='no'>df</span>$<span class='no'>var</span>)</div><div class='output co'>#&gt; [1] "factor"</div><div class='input'>
-<span class='no'>df2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/as.data.frame'>as.data.frame</a></span>(<span class='no'>krig</span>, <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/head'>head</a></span>(<span class='no'>df2</span>)</div><div class='output co'>#&gt;   var   x  y        z
-#&gt; 1   c  10 10 2.134696
-#&gt; 2   c  30 10 2.119651
-#&gt; 3   c  50 10 2.104591
-#&gt; 4   c  70 10 2.089517
-#&gt; 5   c  90 10 2.074427
-#&gt; 6   c 110 10 2.059322</div><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/class'>class</a></span>(<span class='no'>df2</span>$<span class='no'>var</span>)</div><div class='output co'>#&gt; [1] "character"</div></span></pre>
+#&gt; 6   c 110 10 2.059322</div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
