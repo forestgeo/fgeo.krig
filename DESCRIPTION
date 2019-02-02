@@ -20,24 +20,24 @@ BugReports: https://github.com/forestgeo/fgeo.krig/issues
 Depends: 
     R (>= 3.2)
 Imports: 
-    fgeo.tool,
-    geoR,
+    fgeo.tool (>= 1.2.1),
+    geoR (>= 1.7.5.2.1),
     MASS,
-    purrr,
-    rlang,
+    purrr (>= 0.3.0),
+    rlang (>= 0.3.1),
     stats,
-    tibble
+    tibble (>= 2.0.1)
 Suggests: 
-    covr,
-    dplyr,
-    ggplot2,
-    knitr,
+    covr (>= 3.2.1),
+    dplyr (>= 0.7.8),
+    ggplot2 (>= 3.1.0),
+    knitr (>= 1.21),
     lattice,
-    rmarkdown,
-    spelling,
-    stringr,
-    testthat,
-    tidyr
+    rmarkdown (>= 1.11),
+    spelling (>= 2.0),
+    stringr (>= 1.3.1),
+    testthat (>= 2.0.1),
+    tidyr (>= 0.8.2)
 Additional_repositories: https://forestgeo.github.io/drat/
 Encoding: UTF-8
 Language: en-US
