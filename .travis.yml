@@ -22,5 +22,3 @@ matrix:
       skip_cleanup: true
   - r: oldrel
   - r: 3.3
-  allow_failures:
-  - r: 3.3
