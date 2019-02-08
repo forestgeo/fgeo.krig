@@ -3,6 +3,10 @@
 language: R
 cache: packages
 
+# https://github.com/travis-ci/travis-ci/issues/6987
+# Warning message:
+#   no DISPLAY variable so Tk is not available
+
 matrix:
   include:
   - r: devel
