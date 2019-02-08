@@ -2,6 +2,7 @@
 
 language: R
 cache: packages
+latex: false
 
 # https://github.com/travis-ci/travis-ci/issues/6987
 # Warning message:
