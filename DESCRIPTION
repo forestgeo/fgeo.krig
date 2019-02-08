@@ -20,7 +20,7 @@ BugReports: https://github.com/forestgeo/fgeo.krig/issues
 Depends: 
     R (>= 3.2)
 Imports: 
-    fgeo.tool (>= 1.2.1),
+    fgeo.tool (>= 1.2.2),
     geoR (>= 1.7.5.2.1),
     MASS,
     purrr (>= 0.3.0),
