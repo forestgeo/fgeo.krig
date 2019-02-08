@@ -1,3 +1,4 @@
+^log\.txt$
 ^revdep$
 ^cran-comments\.md$
 ^Rplots\.pdf$

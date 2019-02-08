@@ -13,16 +13,19 @@ status](http://www.r-pkg.org/badges/version/fgeo.krig)](https://cran.r-project.o
 
 ## Installation
 
-Install the development version of **fgeo.krig**:
+Install the latest stable version of **fgeo.krig** with:
 
-    # install.packages("devtools")
-    devtools::install_github("forestgeo/fgeo.krig")
+``` r
+these_repos <- c(getOption("repos"), "https://forestgeo.github.io/drat")
+install.packages("fgeo.krig", repos = these_repos)
+```
 
-Or [install all **fgeo** packages in one
-step](https://forestgeo.github.io/fgeo/index.html#installation).
+Install the development version of **fgeo.krig** with:
 
-For details on how to install packages from GitHub, see [this
-article](https://goo.gl/dQKEeg).
+``` r
+# install.packages("devtools")
+devtools::install_github("forestgeo/fgeo.krig")
+```
 
 ## Example
 
