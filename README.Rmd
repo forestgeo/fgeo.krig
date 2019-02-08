@@ -22,16 +22,19 @@ knitr::opts_chunk$set(
 
 ## Installation
 
-Install the development version of **fgeo.krig**:
+Install the latest stable version of __fgeo.krig__ with:
 
+```R
+these_repos <- c(getOption("repos"), "https://forestgeo.github.io/drat")
+install.packages("fgeo.krig", repos = these_repos)
 ```
+
+Install the development version of __fgeo.krig__ with:
+
+```R
 # install.packages("devtools")
 devtools::install_github("forestgeo/fgeo.krig")
 ```
-
-Or [install all **fgeo** packages in one step](https://forestgeo.github.io/fgeo/index.html#installation).
-
-For details on how to install packages from GitHub, see [this article](https://goo.gl/dQKEeg).
 
 ## Example
 
