@@ -7,6 +7,8 @@ latex: false
 # https://github.com/travis-ci/travis-ci/issues/6987
 # Warning message:
 #   no DISPLAY variable so Tk is not available
+before_install:
+- export DISPLAY=:99.0
 
 matrix:
   include:
