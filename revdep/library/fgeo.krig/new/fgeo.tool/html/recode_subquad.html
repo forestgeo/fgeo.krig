@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Recode subquadrat.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for recode_subquad {fgeo.tool}"><tr><td>recode_subquad {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Recode subquadrat.</h2>
+
+<h3>Description</h3>
+
+<p>Recode subquadrat.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+recode_subquad(data, offset = -1)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>offset</code></td>
+<td>
+<p>A number; either -1 or 1, to rest or add one unit to the number
+of column of each subquadrat.</p>
+<pre>First column is 0    First column is 1
+-----------------    -----------------
+   04 14 24 34          14 24 34 44
+   03 13 23 33          13 23 33 43
+   02 12 22 32          12 22 32 42
+   01 11 21 31          11 21 31 41
+</pre></td></tr>
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A dataframe with the variable <code>subquadrat</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A modified version of the input.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+first_subquad_11 &lt;- tibble(subquadrat = c("11", "12", "22"))
+first_subquad_11
+
+first_subquad_01 &lt;- recode_subquad(first_subquad_11, offset = -1)
+first_subquad_01
+
+first_subquad_11 &lt;- recode_subquad(first_subquad_01, offset = 1)
+first_subquad_11
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

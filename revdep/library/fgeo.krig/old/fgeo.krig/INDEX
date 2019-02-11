@@ -1,0 +1,9 @@
+as_tibble.krig_lst      Coerce objects of class "krig_lst" to dataframe
+                        or tbl (tibble).
+krig                    Krige soil data following the methodology of
+                        the John et al. (2007).
+krig_auto_params        Find "best" variogram parameters.
+krig_breaks             Sequence of n exponentially increasing values.
+soil_fake               Fake soil data with multiple soil variables.
+soil_random             Soil data for examples.
+summary.krig_lst        Summary objects of class "krig_lst".

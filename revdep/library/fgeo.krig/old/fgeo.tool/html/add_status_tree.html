@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add column 'status_tree' based on the status of all stems of...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for add_status_tree {fgeo.tool}"><tr><td>add_status_tree {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add column <code>status_tree</code> based on the status of all stems of each tree.</h2>
+
+<h3>Description</h3>
+
+<p>Add column <code>status_tree</code> based on the status of all stems of each tree.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+add_status_tree(data, status_a = "A", status_d = "D")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A ForestGEO-like dataframe: A <em>ViewFullTable</em>, <em>tree</em> or <em>stem</em>
+table.</p>
+</td></tr>
+<tr valign="top"><td><code>status_a, status_d</code></td>
+<td>
+<p>Sting to match alive and dead stems; it corresponds
+to the values of the variable <code>status</code> (in census tables) or <code>Status</code> (with
+capital &quot;S&quot; in ViewFull tables).</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>The input data set with the additional variable <code>status_tree</code>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions to add columns to dataframes: <code><a href="add_subquad.html">add_subquad</a></code>,
+<code><a href="add_var.html">add_var</a></code>
+</p>
+<p>Other functions for ForestGEO data: <code><a href="add_subquad.html">add_subquad</a></code>,
+<code><a href="add_var.html">add_var</a></code>
+</p>
+<p>Other functions for fgeo census: <code><a href="add_var.html">add_var</a></code>,
+<code><a href="guess_plotdim.html">guess_plotdim</a></code>, <code><a href="pick_drop.html">pick_drop</a></code>
+</p>
+<p>Other functions for fgeo vft: <code><a href="add_subquad.html">add_subquad</a></code>,
+<code><a href="add_var.html">add_var</a></code>, <code><a href="guess_plotdim.html">guess_plotdim</a></code>,
+<code><a href="pick_drop.html">pick_drop</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+stem &lt;- tribble(
+  ~CensusID, ~treeID, ~stemID, ~status,
+          1,       1,       1,     "A",
+          1,       1,       2,     "D",
+          
+          1,       2,       3,     "D",
+          1,       2,       4,     "D",
+          
+          
+          
+          2,       1,       1,     "A",
+          2,       1,       2,     "G",
+          
+          2,       2,       3,     "D",
+          2,       2,       4,     "G"
+)
+
+add_status_tree(stem)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

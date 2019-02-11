@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Assert a package is installed.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for assert_is_installed {fgeo.tool}"><tr><td>assert_is_installed {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Assert a package is installed.</h2>
+
+<h3>Description</h3>
+
+<p>Assert a package is installed.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+assert_is_installed(pkg)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>pkg</code></td>
+<td>
+<p>Character vector giving the name of a package.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>An error if <code>pkg</code> is not installed or invisible <code>pkg</code> if it is.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+assert_is_installed("base")
+## Not run: 
+try(assert_is_installed("bad"))
+
+## End(Not run)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

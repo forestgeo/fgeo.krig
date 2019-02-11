@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Functions to get variables from other variables.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for from_var_to_var {fgeo.tool}"><tr><td>from_var_to_var {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Functions to get variables from other variables.</h2>
+
+<h3>Description</h3>
+
+<p>These functions wrap their corresponding functions from the CTFS R Package,
+but these versions are stricter. The main differences are these:
+</p>
+
+<ul>
+<li><p> names use &quot;_&quot; not &quot;.&quot;.
+</p>
+</li>
+<li><p> argument gridsize defaults to missing to force the user to provide it.
+</p>
+</li>
+<li><p> If the argument <code>plotdim</code> is missing from functions <code>gxgy_fun()</code>, its value
+will be guessed and notified.
+</p>
+</li></ul>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+rowcol_to_index(rowno, colno, gridsize, plotdim)
+
+index_to_rowcol(index, gridsize, plotdim)
+
+gxgy_to_index(gx, gy, gridsize, plotdim)
+
+gxgy_to_lxly(gx, gy, gridsize, plotdim)
+
+gxgy_to_qxqy(gx, gy, gridsize, plotdim)
+
+gxgy_to_rowcol(gx, gy, gridsize, plotdim)
+
+gxgy_to_hectindex(gx, gy, plotdim)
+
+index_to_gxgy(index, gridsize, plotdim)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>rowno, colno</code></td>
+<td>
+<p>Row and column number &ndash; as defined in a census plot.</p>
+</td></tr>
+<tr valign="top"><td><code>gridsize</code></td>
+<td>
+<p>The gridsize of the census plot (commonly 20 m).</p>
+</td></tr>
+<tr valign="top"><td><code>plotdim</code></td>
+<td>
+<p>The global dimensions of the census plot (i.e. the
+maximum possible values of <code>gx</code> and <code>gy</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>index</code></td>
+<td>
+<p>Index number as defined for a census plot.</p>
+</td></tr>
+<tr valign="top"><td><code>gx, gy</code></td>
+<td>
+<p>A number; global x and y position in a census plot.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+<p><code>gxgy_to_qxqy()</code> didn't exist in the original CTFS R Package. Added for
+consistency.
+</p>
+
+
+<h3>Value</h3>
+
+<p>A vector or dataframe (see examples).
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Rick Condit, Suzanne Lao.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+gxgy_to_index(c(0, 400, 990), c(0, 200, 490), gridsize = 20)
+
+gridsize &lt;- 20
+plotdim &lt;- c(1000, 500)
+
+x &lt;- gxgy_to_hectindex(1:3, 1:3, plotdim)
+x
+typeof(x)
+is.data.frame(x)
+is.vector(x)
+
+x &lt;- gxgy_to_index(1:3, 1:3, gridsize, plotdim)
+x
+typeof(x)
+is.data.frame(x)
+is.vector(x)
+
+x &lt;- gxgy_to_lxly(1:3, 1:3, gridsize, plotdim)
+x
+typeof(x)
+is.data.frame(x)
+is.vector(x)
+
+x &lt;- gxgy_to_rowcol(1:3, 1:3, gridsize, plotdim)
+x
+typeof(x)
+is.data.frame(x)
+is.vector(x)
+
+x &lt;- index_to_rowcol(1:3, gridsize, plotdim)
+x
+typeof(x)
+is.data.frame(x)
+is.vector(x)
+
+x &lt;- rowcol_to_index(1:3, 1:3, gridsize, plotdim)
+x
+typeof(x)
+is.data.frame(x)
+is.vector(x)
+
+index_to_gxgy(1:3, gridsize, plotdim)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

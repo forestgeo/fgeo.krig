@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Predicates to detect and flag duplicated and multiple values...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for is_multiple {fgeo.tool}"><tr><td>is_multiple {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Predicates to detect and flag duplicated and multiple values of a variable.</h2>
+
+<h3>Description</h3>
+
+<p><code>is_multiple()</code> and <code>is_duplicated()</code> return <code>TRUE</code> if they detect,
+respectively, multiple different values of a variable (e.g. c(1, 2)<code>), or duplicated values of a variable (e.g. c(1, 1)</code>).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+is_multiple(.data)
+
+is_duplicated(.data)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>.data</code></td>
+<td>
+<p>A vector.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Logical.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions for internal use in other fgeo packages: <code><a href="flag_if.html">flag_if</a></code>,
+<code><a href="guess_plotdim.html">guess_plotdim</a></code>
+</p>
+<p>Other functions to check inputs: <code><a href="check_crucial_names.html">check_crucial_names</a></code>,
+<code><a href="flag_if_group.html">flag_if_group</a></code>
+</p>
+<p>Other functions for developers: <code><a href="check_crucial_names.html">check_crucial_names</a></code>,
+<code><a href="extract_insensitive.html">extract_insensitive</a></code>,
+<code><a href="flag_if_group.html">flag_if_group</a></code>,
+<code><a href="nms_try_rename.html">nms_try_rename</a></code>,
+<code><a href="rename_matches.html">rename_matches</a></code>, <code><a href="type_ensure.html">type_ensure</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+is_multiple(c(1, 2))
+is_multiple(c(1, 1))
+is_multiple(c(1, NA))
+
+is_duplicated(c(1, 2))
+is_duplicated(c(1, 1))
+is_duplicated(c(1, NA))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

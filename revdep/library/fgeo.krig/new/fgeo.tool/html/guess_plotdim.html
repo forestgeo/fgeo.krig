@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Guess plot dimensions.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for guess_plotdim {fgeo.tool}"><tr><td>guess_plotdim {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Guess plot dimensions.</h2>
+
+<h3>Description</h3>
+
+<p>Guess plot dimensions.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+guess_plotdim(x, accuracy = 20)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A ForestGEO-like dataframe: A <em>ViewFullTable</em>, <em>tree</em> or <em>stem</em>
+table.</p>
+</td></tr>
+<tr valign="top"><td><code>accuracy</code></td>
+<td>
+<p>A number giving the accuracy with which to round <code>gx</code> and
+<code>gy</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A numeric vector of length 2.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions for fgeo census and vft: <code><a href="pick_drop.html">pick_drop</a></code>
+</p>
+<p>Other functions for fgeo census: <code><a href="add_status_tree.html">add_status_tree</a></code>,
+<code><a href="add_var.html">add_var</a></code>, <code><a href="pick_drop.html">pick_drop</a></code>
+</p>
+<p>Other functions for fgeo vft: <code><a href="add_status_tree.html">add_status_tree</a></code>,
+<code><a href="add_subquad.html">add_subquad</a></code>, <code><a href="add_var.html">add_var</a></code>,
+<code><a href="pick_drop.html">pick_drop</a></code>
+</p>
+<p>Other functions for internal use in other fgeo packages: <code><a href="flag_if.html">flag_if</a></code>,
+<code><a href="is_multiple.html">is_multiple</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+x &lt;- data.frame(
+  gx = c(0, 300, 979),
+  gy = c(0, 300, 481)
+)
+guess_plotdim(x)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

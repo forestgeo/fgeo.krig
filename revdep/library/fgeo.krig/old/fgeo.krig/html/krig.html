@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Krige soil data following the methodology of the John et al....</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for krig {fgeo.krig}"><tr><td>krig {fgeo.krig}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Krige soil data following the methodology of the John et al. (2007).</h2>
+
+<h3>Description</h3>
+
+<p>Use <code>krig()</code> to krige soil data following the methodology of the John et al.
+(2007). Features:
+</p>
+
+<ul>
+<li><p> Tries to guess <code>plotdim</code>.
+</p>
+</li>
+<li><p> Informs the guessed <code>plotdim</code> and the <code>gridsize</code> provided.
+</p>
+</li>
+<li><p> Allows to suppress messages.
+</p>
+</li>
+<li><p> Is vectorized over the argument <code>var</code>, to easily iterate over multiple soil
+variables.
+</p>
+</li>
+<li><p> Has a method for <code><a href="../../base/html/summary.html">base::summary()</a></code> (see examples).
+</p>
+</li>
+<li><p> Has a method for <code><a href="../../tibble/html/as_tibble.html">tibble::as_tibble()</a></code> (see examples).
+</p>
+</li></ul>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+krig(soil, var, params = NULL, gridsize = 20, plotdim = NULL,
+  breaks = krig_breaks(2, 320, 30), use_ksline = TRUE, quiet = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>soil</code></td>
+<td>
+<p>The data frame with the points, coords specified in the
+columns <code>gx</code>, <code>gy</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>var</code></td>
+<td>
+<p>A character vector giving the name of each column in the soil
+dataset #' containing soil data to krige.</p>
+</td></tr>
+<tr valign="top"><td><code>params</code></td>
+<td>
+<p>If you want to pass specified kriging parameters; see
+<code><a href="krig_auto_params.html">krig_auto_params()</a></code> for each parameter.</p>
+</td></tr>
+<tr valign="top"><td><code>gridsize</code></td>
+<td>
+<p>Points are kriged to the center points of a grid of
+this size.</p>
+</td></tr>
+<tr valign="top"><td><code>plotdim</code></td>
+<td>
+<p>Numeric vector giving x and y dimensions of the plot. If
+<code>NULL</code> (default) it will be guessed. Otherwise, it must be of length 2 with
+the format <code>c(x, y)</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>breaks</code></td>
+<td>
+<p>Breaks/intervals used to calculate the semivariogram.</p>
+</td></tr>
+<tr valign="top"><td><code>use_ksline</code></td>
+<td>
+<p>Use the <code><a href="../../geoR/html/ksline.html">geoR::ksline()</a></code> function? Use <code>TRUE</code> to calculate
+a &quot;best&quot; semivariogram based on default parameters via
+<code>geoR::variogram()</code>]. Use <code>FALSE</code> to base calculation on parameters passed
+to <code>params</code>.</p>
+</td></tr>
+<tr valign="top"><td><code>quiet</code></td>
+<td>
+<p>Use <code>TRUE</code> to suppresses messages.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list with the following items:
+</p>
+
+<ul>
+<li> <p><code>df</code>: Data frame of kriged values (column z) at each grid point (x, y).
+</p>
+</li>
+<li> <p><code>df.poly</code>: Data frame of the polynomial surface fitted to the raw data.
+</p>
+</li>
+<li> <p><code>lambda</code>: The &quot;lambda&quot; value used in the Box-Cox transform of the raw
+data.
+</p>
+</li>
+<li> <p><code>vg</code>: A list giving the variogram parameters used for the kriging.
+</p>
+</li>
+<li> <p><code>vm</code>: Minimum loss value returned from <code><a href="../../geoR/html/variofit.html">geoR::variofit()</a></code>.
+</p>
+</li></ul>
+
+
+
+<h3>Deprecated</h3>
+
+<p><code>krig()</code> evolves from <code>GetKrigedSoil()</code>.  <code>GetKrigedSoil()</code> has been
+deprecated, although it remains in the package as an internal function.
+</p>
+
+
+<h3>Breaks default</h3>
+
+<p>The default breaks argument is set to have more points where the exponential
+curve rises the most and fewer at large distances. This means that the curve
+fitting is not overly biased by points beyond the effective maximum range.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Graham Zemunik (grah.zem@gmail.com).
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../geoR/html/variofit.html">geoR::variofit()</a></code>, <code><a href="../../geoR/html/variog.html">geoR::variog()</a></code>, <code><a href="../../geoR/html/as.geodata.html">geoR::as.geodata()</a></code>,
+<code><a href="../../geoR/html/ksline.html">geoR::ksline()</a></code>, <code><a href="../../geoR/html/krige.conv.html">geoR::krige.conv()</a></code>, <code>geoR::krige.control()</code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+library(fgeo.tool)
+
+# Using automated parameters
+summary(krig(soil_fake, var = "c"))
+
+# Now using custom parameters (arbitrary but based on automated kriging params)
+params &lt;- list(
+  model = "circular", range = 100, nugget = 1000, sill = 46000, kappa = 0.5
+)
+
+# Also using not one but multiple soil variables
+vars &lt;- c("c", "p")
+custom &lt;- krig(soil_fake, vars, params = params, quiet = TRUE)
+summary(custom)
+
+as_tibble(custom, name = "soil_var")
+
+tail(as_tibble(custom, item = "df.poly"))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.krig</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

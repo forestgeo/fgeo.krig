@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Fix common problems in _ViewFullTable_ and _ViewTaxonomy_...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for sanitize_vft {fgeo.tool}"><tr><td>sanitize_vft {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Fix common problems in <em>ViewFullTable</em> and <em>ViewTaxonomy</em> data.</h2>
+
+<h3>Description</h3>
+
+<p>These functions fix common problems of <em>ViewFullTable</em> and <em>ViewTaxonomy</em>
+data:
+</p>
+
+<ul>
+<li><p> Ensure that each column has the correct type.
+</p>
+</li>
+<li><p> Ensure that missing values are represented with <code>NA</code>s &ndash; not with the
+literal string &quot;NULL&quot;.
+</p>
+</li></ul>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+sanitize_vft(.data, na = c("", "NA", "NULL"), ...)
+
+sanitize_taxa(.data, na = c("", "NA", "NULL"), ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>.data</code></td>
+<td>
+<p>A dataframe; either a ForestGEO <em>ViewFullTable</em>
+(<code>sanitize_vft()</code>).
+or <em>ViewTaxonomy</em> (<code>sanitize_vft()</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>na</code></td>
+<td>
+<p>Character vector of strings to interpret as missing values. Set this
+option to <code>character()</code> to indicate no missing values.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Arguments passed to <code><a href="../../readr/html/type_convert.html">readr::type_convert()</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A dataframe.
+</p>
+
+
+<h3>Acknowledgments</h3>
+
+<p>Thanks to Shameema Jafferjee Esufali for motivating this functions.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="read_vft.html">read_vft()</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+assert_is_installed("fgeo.x")
+
+vft &lt;- fgeo.x::vft_4quad
+
+# Introduce problems to show how to fix them
+# Bad column types
+vft[] &lt;- lapply(vft, as.character)
+# Bad representation of missing values
+vft$PlotName &lt;- "NULL"
+
+# "NULL" should be replaced by `NA` and `DBH` should be numeric
+str(vft[c("PlotName", "DBH")])
+
+# Fix
+vft_sane &lt;- sanitize_vft(vft)
+str(vft_sane[c("PlotName", "DBH")])
+
+taxa &lt;- read.csv(fgeo.x::example_path("taxa.csv"))
+# E.g. inserting bad column types
+taxa[] &lt;- lapply(taxa, as.character)
+# E.g. inserting bad representation of missing values
+taxa$SubspeciesID &lt;- "NULL"
+
+# "NULL" should be replaced by `NA` and `ViewID` should be integer
+str(taxa[c("SubspeciesID", "ViewID")])
+
+# Fix
+taxa_sane &lt;- sanitize_taxa(taxa)
+str(taxa_sane[c("SubspeciesID", "ViewID")])
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

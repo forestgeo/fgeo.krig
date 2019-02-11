@@ -1,3 +1,5 @@
+set.seed(1)
+
 # Small dataset that still preserves plot dimensions via guess_plotdim()
 df0 <- fgeo.krig::soil_random
 df_gx <- tail(dplyr::arrange(df0, gx))

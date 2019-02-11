@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Help to read ForestGEO data safely, with consistent columns...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for type_vft {fgeo.tool}"><tr><td>type_vft {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Help to read ForestGEO data safely, with consistent columns type.</h2>
+
+<h3>Description</h3>
+
+<p>A common cause of problems is feeding functions with data which columns are
+not all of the expected type. The problem often begins when reading data from
+a text file with functions such as <code><a href="../../utils/html/read.csv.html">utils::read.csv()</a></code>,
+<code><a href="../../utils/html/read.delim.html">utils::read.delim()</a></code>, and friends &ndash; which commonly guess wrongly the column
+type that you more likely expect. These common offenders are strongly
+discouraged; instead consider using <code>readr::read_csv()</code>, <code>readr::read_tsv()</code>,
+and friends, which guess column types correctly much more often than their
+analogs from the <strong>utils</strong> package.
+</p>
+<p><code>type_vft()</code> and <code>type_taxa()</code> help you to read data more safely by
+explicitly specifying what type to expect from each column of known datasets.
+These functions output the specification of column types used internally by
+<code><a href="read_vft.html">read_vft()</a></code> and <code><a href="read_vft.html">read_taxa()</a></code>:
+</p>
+
+<ul>
+<li> <p><code>type_vft():</code> Type specification for <em>ViewFullTable</em>.
+</p>
+</li>
+<li> <p><code>type_taxa():</code> Type specification for <em>ViewFullTaxonomy</em>.
+</p>
+</li></ul>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+type_vft()
+
+type_taxa()
+</pre>
+
+
+<h3>Details</h3>
+
+<p>Types reference (for more details see <code><a href="../../readr/html/read_delim.html">read_delim()</a></code>):
+</p>
+
+<ul>
+<li><p> c = character,
+</p>
+</li>
+<li><p> i = integer,
+</p>
+</li>
+<li><p> n = number,
+</p>
+</li>
+<li><p> d = double,
+</p>
+</li>
+<li><p> l = logical,
+</p>
+</li>
+<li><p> D = date,
+</p>
+</li>
+<li><p> T = date time,
+</p>
+</li>
+<li><p> t = time,
+</p>
+</li>
+<li><p> ? = guess,
+</p>
+</li>
+<li><p> or _/- to skip the column.'.
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>A list.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../readr/html/read_delim.html">readr::read_delim()</a></code>.
+</p>
+<p>Other functions to operate on column types: <code><a href="type_ensure.html">type_ensure</a></code>
+</p>
+<p>Other functions to read text files delivered by ForestgGEO's database: <code><a href="read_vft.html">read_vft</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+assert_is_installed("fgeo.x")
+library(fgeo.x)
+library(readr)
+
+str(type_vft())
+
+read_csv(example_path("view/vft_4quad.csv"), col_types = type_vft())
+
+str(type_taxa())
+
+read_csv(example_path("view/taxa.csv"), col_types = type_taxa())
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

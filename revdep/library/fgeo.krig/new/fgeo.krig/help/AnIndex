@@ -1,0 +1,11 @@
+as.data.frame.krig_lst	as_tibble.krig_lst
+assert_is_installed	reexports
+as_tibble	reexports
+as_tibble.krig_lst	as_tibble.krig_lst
+krig	krig
+krig_auto_params	krig_auto_params
+krig_breaks	krig_breaks
+reexports	reexports
+soil_fake	soil_fake
+soil_random	soil_random
+summary.krig_lst	summary.krig_lst

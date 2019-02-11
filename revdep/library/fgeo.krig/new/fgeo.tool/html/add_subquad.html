@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Add column 'subquadrat' based on 'QX' and 'QY' coordinates.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for add_subquad {fgeo.tool}"><tr><td>add_subquad {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Add column <code>subquadrat</code> based on <code>QX</code> and <code>QY</code> coordinates.</h2>
+
+<h3>Description</h3>
+
+<p>Add column <code>subquadrat</code> based on <code>QX</code> and <code>QY</code> coordinates.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+add_subquad(data, x_q, y_q = x_q, x_sq, y_sq = x_sq,
+  subquad_offset = NULL)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A dataframe with quadrat coordinates <code>QX</code> and <code>QY</code> (e.g. a
+<em>ViewFullTable</em>).</p>
+</td></tr>
+<tr valign="top"><td><code>x_q, y_q</code></td>
+<td>
+<p>Size in meters of a quadrat's side. For ForestGEO sites, a
+common value is 20.</p>
+</td></tr>
+<tr valign="top"><td><code>x_sq, y_sq</code></td>
+<td>
+<p>Size in meters of a subquadrat's side. For ForestGEO sites,
+a common value is 5.</p>
+</td></tr>
+<tr valign="top"><td><code>subquad_offset</code></td>
+<td>
+<p>Either <code>-1</code> or <code>1</code>, to rest or add one unit to the
+digit of each subquadrat that represents the column number.</p>
+<pre>First column is 0    First column is 1
+-----------------    -----------------
+   04 14 24 34          14 24 34 44
+   03 13 23 33          13 23 33 43
+   02 12 22 32          12 22 32 42
+   01 11 21 31          11 21 31 41
+</pre></td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Returns <code>data</code> with the additional variable <code>subquadrat</code>.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Anudeep Singh and Mauro Lepore.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions to add columns to dataframes: <code><a href="add_status_tree.html">add_status_tree</a></code>,
+<code><a href="add_var.html">add_var</a></code>
+</p>
+<p>Other functions for ForestGEO data: <code><a href="add_status_tree.html">add_status_tree</a></code>,
+<code><a href="add_var.html">add_var</a></code>
+</p>
+<p>Other functions for fgeo vft: <code><a href="add_status_tree.html">add_status_tree</a></code>,
+<code><a href="add_var.html">add_var</a></code>, <code><a href="guess_plotdim.html">guess_plotdim</a></code>,
+<code><a href="pick_drop.html">pick_drop</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+vft &lt;- tribble(
+   ~QX,  ~QY,
+  17.9,    0,
+   4.1,   15,
+   6.1, 17.3,
+   3.8,  5.9,
+   4.5, 12.4,
+   4.9,  9.3,
+   9.8,  3.2,
+  18.6,  1.1,
+  17.3,  4.1,
+   1.5, 16.3
+)
+
+add_subquad(vft, 20, 20, 5, 5)
+
+add_subquad(vft, 20, 20, 5, 5, subquad_offset = -1)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>
