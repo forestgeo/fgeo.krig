@@ -14,7 +14,7 @@ MORE RELIABLE
 
 EASIER TO MAINTAIN
 
-* TODO: Website now builds on Travis CI and deploys on the gh-branch.
+* Website now builds on Travis CI and deploys on the gh-branch.
 
 * .travis.yml now includes parameters that make the builds less likely to fail.
 
