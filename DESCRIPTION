@@ -13,7 +13,7 @@ Authors@R:
       person(given = "CTFS-ForestGEO",
              role = c("cph", "fnd"),
              email = "ForestGEO@si.edu"))
-Description: Analyze soils.
+Description: Analyze soil data.
 License: GPL-3
 URL: https://github.com/forestgeo/fgeo.krig
 BugReports: https://github.com/forestgeo/fgeo.krig/issues
