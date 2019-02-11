@@ -8,17 +8,18 @@
 
 ## R CMD check results
 
-http://builder.r-hub.io/status/fgeo.krig_1.0.0.9000.tar.gz-880413bd3d3b4008a96b1302de92d836
-http://builder.r-hub.io/status/fgeo.krig_1.0.0.9000.tar.gz-c6919bb0b319405089b94be45fbe59ad
-http://builder.r-hub.io/status/fgeo.krig_1.0.0.9000.tar.gz-1602b43b242840889de095cd511b44c2
-
 0 errors | 1 warning | 0 notes
 
+WARNING
 New submission
 Strong dependencies not in mainstream repositories:
   fgeo.tool
 Availability using Additional_repositories specification:
   fgeo.tool   yes   https://forestgeo.github.io/drat/
+
+http://builder.r-hub.io/status/fgeo.krig_1.0.1.tar.gz-4505351ba785405c8a8915b208658a8e
+http://builder.r-hub.io/status/fgeo.krig_1.0.1.tar.gz-5e5f916413684ca6b12c4b6b1ce52d69
+http://builder.r-hub.io/status/fgeo.krig_1.0.1.tar.gz-50885514a09b4ef3b66add2d88a72481
 
 ## Downstream dependencies
 
