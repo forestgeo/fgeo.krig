@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//index.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/as_tibble.krig_lst.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/krig.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/krig_auto_params.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/krig_breaks.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/reexports.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/soil_fake.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/soil_random.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//reference/summary.krig_lst.html</loc>
+  </url>
+  <url>
+    <loc>https://forestgeo.github.io/fgeo.krig//articles/siteonly/krige.html</loc>
+  </url>
+</urlset>
