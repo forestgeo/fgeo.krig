@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Flag if a vector or dataframe-column meets a condition.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for flag_if {fgeo.tool}"><tr><td>flag_if {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Flag if a vector or dataframe-column meets a condition.</h2>
+
+<h3>Description</h3>
+
+<p>This function returns a condition (error, warning, or message) and its first
+argument, invisibly. It is a generic. If the first input is a vector, it
+evaluates it directly; if it is is a dataframe, it evaluates a given column.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+flag_if(.data, ...)
+
+## Default S3 method:
+flag_if(.data, predicate, condition = warning,
+  msg = NULL, ...)
+
+## S3 method for class 'data.frame'
+flag_if(.data, name, predicate, condition = warning,
+  msg = NULL, ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>.data</code></td>
+<td>
+<p>Vector.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Other arguments passed to methods.</p>
+</td></tr>
+<tr valign="top"><td><code>predicate</code></td>
+<td>
+<p>A predicate function.</p>
+</td></tr>
+<tr valign="top"><td><code>condition</code></td>
+<td>
+<p>A condition function (e.g. <code><a href="../../base/html/stop.html">stop()</a></code>, <code><a href="../../base/html/warning.html">warning()</a></code>,
+<code>rlang::inform()</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>msg</code></td>
+<td>
+<p>String. An optional custom message.</p>
+</td></tr>
+<tr valign="top"><td><code>name</code></td>
+<td>
+<p>String. The name of a column of a dataframe.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A condition (and <code>.data</code> invisibly).
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions for internal use in other fgeo packages: <code><a href="guess_plotdim.html">guess_plotdim</a></code>,
+<code><a href="is_multiple.html">is_multiple</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# WITH VECTORS
+dupl &lt;- c(1, 1)
+flag_if(dupl, is_duplicated)
+# Silent
+flag_if(dupl, is_multiple)
+
+mult &lt;- c(1, 2)
+flag_if(mult, is_multiple, message, "Custom")
+# Silent
+flag_if(mult, is_duplicated)
+
+# Both silent
+flag_if(c(1, NA), is_multiple)
+flag_if(c(1, NA), is_duplicated)
+
+# WITH DATAFRAMES
+.df &lt;- data.frame(a = 1:3, b = 1, stringsAsFactors = FALSE)
+flag_if(.df, "b", is_multiple)
+flag_if(.df, "a", is_multiple)
+flag_if(.df, "a", is_multiple, message, "Custom")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

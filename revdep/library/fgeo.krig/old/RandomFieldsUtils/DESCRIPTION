@@ -1,0 +1,16 @@
+Package: RandomFieldsUtils
+Version: 0.5
+Title: Utilities for the Simulation and Analysis of Random Fields
+Author: Martin Schlather [aut, cre], Reinhard Furrer [ctb], Martin Kroll [ctb]
+Maintainer: Martin Schlather <schlather@math.uni-mannheim.de>
+Depends: R (>= 3.0)
+Imports: utils, methods
+Description: Various utilities are provided that might be used in spatial statistics and elsewhere. It delivers a method for solving linear equations that checks the sparsity of the matrix before any algorithm is used. Furthermore, it includes the Struve functions.
+License: GPL (>= 3)
+URL: http://ms.math.uni-mannheim.de/de/publications/software
+Packaged: 2019-02-09 20:25:26 UTC; schlather
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2019-02-10 21:43:24 UTC
+Built: R 3.5.2; x86_64-w64-mingw32; 2019-02-10 21:54:25 UTC; windows
+Archs: i386, x64

@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pick and drop rows from _ViewFullTable_, _tree_, and _stem_...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pick_drop {fgeo.tool}"><tr><td>pick_drop {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Pick and drop rows from <em>ViewFullTable</em>, <em>tree</em>, and <em>stem</em> tables.</h2>
+
+<h3>Description</h3>
+
+<p>These functions provide an expressive and convenient way to pick specific
+rows from ForestGEO datasets. They allow you to remove missing values (with
+<code>na.rm = TRUE</code>) but conservatively default to preserving them. This behavior
+is similar to <code><a href="../../base/html/subset.html">base::subset()</a></code> and unlike <code>dplyr::filter()</code>. This
+conservative default is important because you want want to include missing
+trees in your analysis.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+pick_dbh_min(data, value, na.rm = FALSE)
+
+pick_dbh_max(data, value, na.rm = FALSE)
+
+pick_dbh_under(data, value, na.rm = FALSE)
+
+pick_dbh_over(data, value, na.rm = FALSE)
+
+pick_status(data, value, na.rm = FALSE)
+
+drop_status(data, value, na.rm = FALSE)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A ForestGEO-like dataframe: A <em>ViewFullTable</em>, <em>tree</em> or <em>stem</em>
+table.</p>
+</td></tr>
+<tr valign="top"><td><code>value</code></td>
+<td>
+<p>An atomic vector; a single value against to compare each value
+of the variable encoded in the function's name.</p>
+</td></tr>
+<tr valign="top"><td><code>na.rm</code></td>
+<td>
+<p>Set to <code>TRUE</code> if you want to remove missing values from the
+variable encoded in the function's name.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A dataframe similar to .<code>data</code> but including only the rows with
+matching conditions.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code>dplyr::filter()</code>, <code>Extract</code> (<code>[</code>).
+</p>
+<p>Other functions for fgeo census and vft: <code><a href="guess_plotdim.html">guess_plotdim</a></code>
+</p>
+<p>Other functions for fgeo census: <code><a href="add_status_tree.html">add_status_tree</a></code>,
+<code><a href="add_var.html">add_var</a></code>, <code><a href="guess_plotdim.html">guess_plotdim</a></code>
+</p>
+<p>Other functions for fgeo vft: <code><a href="add_status_tree.html">add_status_tree</a></code>,
+<code><a href="add_subquad.html">add_subquad</a></code>, <code><a href="add_var.html">add_var</a></code>,
+<code><a href="guess_plotdim.html">guess_plotdim</a></code>
+</p>
+<p>Other functions to pick or drop rows of a ForestGEO dataframe: <code><a href="pick_main_stem.html">pick_main_stem</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+census &lt;- tribble(
+  ~dbh, ~status,
+     0,     "A",
+    50,     "A",
+   100,     "A",
+   150,     "A",
+    NA,     "M",
+    NA,     "D",
+    NA,      NA
+  )
+
+# &lt;=
+pick_dbh_max(census, 100)
+pick_dbh_max(census, 100, na.rm = TRUE)
+
+# &gt;=
+pick_dbh_min(census, 100)
+pick_dbh_min(census, 100, na.rm = TRUE)
+
+# &lt;
+pick_dbh_under(census, 100)
+pick_dbh_under(census, 100, na.rm = TRUE)
+
+# &gt;
+pick_dbh_over(census, 100)
+pick_dbh_over(census, 100, na.rm = TRUE)
+# Same, but `subset()` does not let you keep NAs.
+subset(census, dbh &gt; 100)
+
+# ==
+pick_status(census, "A")
+pick_status(census, "A", na.rm = TRUE)
+
+# !=
+drop_status(census, "D")
+drop_status(census, "D", na.rm = TRUE)
+
+# Compose
+pick_dbh_over(
+  drop_status(census, "D", na.rm = TRUE), 
+  100
+)
+
+# More readable as a pipiline
+census %&gt;%
+  drop_status("D", na.rm = TRUE) %&gt;%
+  pick_dbh_over(100)
+ 
+# Also works with ViewFullTables
+vft &lt;- tribble(
+  ~DBH,   ~Status,
+     0,   "alive",
+    50,   "alive",
+   100,   "alive",
+   150,   "alive",
+    NA, "missing",
+    NA,    "dead",
+    NA,        NA
+)
+
+pick_dbh_max(vft, 100)
+
+pick_status(vft, "alive",  na.rm = TRUE)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

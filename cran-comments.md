@@ -8,11 +8,6 @@
 
 ## R CMD check results
 
-* using R Under development (unstable) (2019-01-31 r76038)
-* using platform: x86_64-w64-mingw32 (64-bit)
-* this is package 'fgeo.krig' version '1.0.0.9000'
-
-Status: 1 ERROR, 1 WARNING, 1 NOTE
 WARNING
 New submission
 Version contains large components (1.0.0.9000) ... FIXME
@@ -20,7 +15,11 @@ Strong dependencies not in mainstream repositories:
   fgeo.tool
 Availability using Additional_repositories specification:
   fgeo.tool   yes   https://forestgeo.github.io/drat/
-  
+
+ERROR
+Package required but not available: 'fgeo.tool'
+
+
 ERROR  ... FIXME
   > library(testthat)
   > library(fgeo.krig)
@@ -50,4 +49,4 @@ ERROR  ... FIXME
 
 ## Downstream dependencies
 
-TODO
+There are no reverse dependencies for this package.

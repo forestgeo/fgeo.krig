@@ -1,0 +1,15 @@
+add_status_tree         Add column 'status_tree' based on the status of
+                        all stems of each tree.
+add_subquad             Add column 'subquadrat' based on 'QX' and 'QY'
+                        coordinates.
+add_var                 Add columns 'lx/ly', 'QX/QY', 'index',
+                        'col/row', 'hectindex', 'quad', 'gx/gy'.
+fgeo_elevation          Create elevation data.
+pick_drop               Pick and drop rows from _ViewFullTable_,
+                        _tree_, and _stem_ tables.
+pick_main_stem          Pick the main stem or main stemid(s) of each
+                        tree in each census.
+read_vft                Import _ViewFullTable_ or _ViewTaxonomy_ data
+                        from a .tsv or .csv file.
+sanitize_vft            Fix common problems in _ViewFullTable_ and
+                        _ViewTaxonomy_ data.

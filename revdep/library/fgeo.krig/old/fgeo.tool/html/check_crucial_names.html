@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Check if an object contains specific names.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for check_crucial_names {fgeo.tool}"><tr><td>check_crucial_names {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Check if an object contains specific names.</h2>
+
+<h3>Description</h3>
+
+<p>Check if an object contains specific names.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+check_crucial_names(x, nms)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A named object.</p>
+</td></tr>
+<tr valign="top"><td><code>nms</code></td>
+<td>
+<p>String; names expected to be found in <code>x</code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>Invisible <code>x</code>, or an error with informative message.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions to check inputs: <code><a href="flag_if_group.html">flag_if_group</a></code>,
+<code><a href="is_multiple.html">is_multiple</a></code>
+</p>
+<p>Other functions for developers: <code><a href="extract_insensitive.html">extract_insensitive</a></code>,
+<code><a href="flag_if_group.html">flag_if_group</a></code>, <code><a href="is_multiple.html">is_multiple</a></code>,
+<code><a href="nms_try_rename.html">nms_try_rename</a></code>,
+<code><a href="rename_matches.html">rename_matches</a></code>, <code><a href="type_ensure.html">type_ensure</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+v &lt;- c(x = 1)
+check_crucial_names(v, "x")
+
+dfm &lt;- data.frame(x = 1)
+check_crucial_names(dfm, "x")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

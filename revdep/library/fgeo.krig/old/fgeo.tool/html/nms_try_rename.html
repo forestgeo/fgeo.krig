@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Try to rename an object.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for nms_try_rename {fgeo.tool}"><tr><td>nms_try_rename {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Try to rename an object.</h2>
+
+<h3>Description</h3>
+
+<p>Given a name you want and a possible alternative, this function renames an
+object as you want or errs with an informative message.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+nms_try_rename(x, want, try)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>A named object.</p>
+</td></tr>
+<tr valign="top"><td><code>want</code></td>
+<td>
+<p>String of length 1 giving the name you want the object to have.</p>
+</td></tr>
+<tr valign="top"><td><code>try</code></td>
+<td>
+<p>String of length 1 giving the name the object might have.</p>
+</td></tr>
+</table>
+
+
+<h3>See Also</h3>
+
+<p>nms
+</p>
+<p>Other functions for developers: <code><a href="check_crucial_names.html">check_crucial_names</a></code>,
+<code><a href="extract_insensitive.html">extract_insensitive</a></code>,
+<code><a href="flag_if_group.html">flag_if_group</a></code>, <code><a href="is_multiple.html">is_multiple</a></code>,
+<code><a href="rename_matches.html">rename_matches</a></code>, <code><a href="type_ensure.html">type_ensure</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+nms_try_rename(c(a = 1), "A", "a")
+nms_try_rename(data.frame(a = 1), "A", "a")
+
+# Passes
+nms_try_rename(c(a = 1, 1), "A", "a")
+## Not run: 
+# Errs
+# nms_try_rename(1, "A", "A")
+
+## End(Not run)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

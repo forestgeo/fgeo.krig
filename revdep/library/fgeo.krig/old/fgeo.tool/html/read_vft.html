@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Import _ViewFullTable_ or _ViewTaxonomy_ data from a .tsv or...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for read_vft {fgeo.tool}"><tr><td>read_vft {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Import <em>ViewFullTable</em> or <em>ViewTaxonomy</em> data from a .tsv or .csv file.</h2>
+
+<h3>Description</h3>
+
+<p><code><a href="read_vft.html">read_vft()</a></code> and <code><a href="read_vft.html">read_taxa()</a></code> help you to read <em>ViewFullTable</em> and
+<em>ViewTaxonomy</em> data from text files delivered by the ForestGEO database.
+These functions avoid common problems about column separators, missing
+values, column names, and column types.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+read_vft(file, delim = NULL, na = c("", "NA", "NULL"), ...)
+
+read_taxa(file, delim = NULL, na = c("", "NA", "NULL"), ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>file</code></td>
+<td>
+<p>A path to a file.</p>
+</td></tr>
+<tr valign="top"><td><code>delim</code></td>
+<td>
+<p>Single character used to separate fields within a record. The
+default (<code>delim = NULL</code>) is to guess between comma or tab (<code>","</code> or <code>"\t"</code>).</p>
+</td></tr>
+<tr valign="top"><td><code>na</code></td>
+<td>
+<p>Character vector of strings to interpret as missing values. Set this
+option to <code>character()</code> to indicate no missing values.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Other arguments passed to <code><a href="../../readr/html/read_delim.html">readr::read_delim()</a></code>.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A <a href="../../tibble/html/tibble-package.html">tibble</a>.
+</p>
+
+
+<h3>Acknowledgments</h3>
+
+<p>Thanks to Shameema Jafferjee Esufali for inspiring the feature that
+automatically detects <code>delim</code> (issue 65).
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../readr/html/read_delim.html">readr::read_delim()</a></code>, <code><a href="type_vft.html">type_vft()</a></code>, <code><a href="type_vft.html">type_taxa()</a></code>.
+</p>
+<p>Other functions to read text files delivered by ForestgGEO's database: <code><a href="type_vft.html">type_vft</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+assert_is_installed("fgeo.x")
+library(fgeo.x)
+
+example_path()
+
+file_vft &lt;- example_path("view/vft_4quad.csv")
+read_vft(file_vft)
+
+file_taxa &lt;- example_path("view/taxa.csv")
+read_taxa(file_taxa)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

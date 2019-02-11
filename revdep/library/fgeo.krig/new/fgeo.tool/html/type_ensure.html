@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Ensure the specific columns of a dataframe have a particular...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for type_ensure {fgeo.tool}"><tr><td>type_ensure {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Ensure the specific columns of a dataframe have a particular type.</h2>
+
+<h3>Description</h3>
+
+<p>Ensure the specific columns of a dataframe have a particular type.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+type_ensure(df, ensure_nms, type = "numeric")
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>df</code></td>
+<td>
+<p>A dataframe.</p>
+</td></tr>
+<tr valign="top"><td><code>ensure_nms</code></td>
+<td>
+<p>Character vector giving names of <code>df</code> to ensure <code>type</code></p>
+</td></tr>
+<tr valign="top"><td><code>type</code></td>
+<td>
+<p>A string giving the type to ensure in columns <code>ensure_nms</code></p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A modified version of <code>df</code>, with columns (specified in <code>ensure_nms</code>)
+of type <code>type</code>.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../purrr/html/modify_at.html">purrr::modify_at()</a></code>.
+</p>
+<p>Other functions to operate on column types: <code><a href="type_vft.html">type_vft</a></code>
+</p>
+<p>Other functions for developers: <code><a href="check_crucial_names.html">check_crucial_names</a></code>,
+<code><a href="extract_insensitive.html">extract_insensitive</a></code>,
+<code><a href="flag_if_group.html">flag_if_group</a></code>, <code><a href="is_multiple.html">is_multiple</a></code>,
+<code><a href="nms_try_rename.html">nms_try_rename</a></code>,
+<code><a href="rename_matches.html">rename_matches</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+dfm &lt;- tibble(
+  w = c(NA, 1, 2),
+  x = 1:3,
+  y = as.character(1:3),
+  z = letters[1:3]
+)
+dfm
+type_ensure(dfm, c("w", "x", "y"), "numeric")
+type_ensure(dfm, c("w", "x", "y", "z"), "character")
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

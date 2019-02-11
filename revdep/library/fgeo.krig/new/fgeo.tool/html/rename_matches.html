@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Rename an object based on case-insensitive match of the names...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for rename_matches {fgeo.tool}"><tr><td>rename_matches {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Rename an object based on case-insensitive match of the names of a reference.</h2>
+
+<h3>Description</h3>
+
+<p>Rename an object based on case-insensitive match of the names of a reference.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+rename_matches(x, y)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>x object which names to restored if they match the reference.</p>
+</td></tr>
+<tr valign="top"><td><code>y</code></td>
+<td>
+<p>Named object to use as reference.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>The output is <code>x</code> with as many names changed as case-insensitive
+matches there are with the reference.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions for developers: <code><a href="check_crucial_names.html">check_crucial_names</a></code>,
+<code><a href="extract_insensitive.html">extract_insensitive</a></code>,
+<code><a href="flag_if_group.html">flag_if_group</a></code>, <code><a href="is_multiple.html">is_multiple</a></code>,
+<code><a href="nms_try_rename.html">nms_try_rename</a></code>, <code><a href="type_ensure.html">type_ensure</a></code>
+</p>
+<p>Other general functions to deal with names: <code><a href="extract_insensitive.html">extract_insensitive</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+ref &lt;- data.frame(COL1 = 1, COL2 = 1)
+x &lt;- data.frame(col1 = 5, col2 = 1, n = 5)
+rename_matches(x, ref)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Detect and flag based on a predicate applied to a variable by...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for flag_if_group {fgeo.tool}"><tr><td>flag_if_group {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Detect and flag based on a predicate applied to a variable by groups.</h2>
+
+<h3>Description</h3>
+
+<p>These functions extend <code>flag_if()</code>] and <code>detect_if()</code> to
+work by groups defined with <code><a href="../../dplyr/html/group_by.html">dplyr::group_by()</a></code>.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+flag_if_group(.data, name, predicate, condition = warn, msg = NULL)
+
+detect_if_group(.data, name, predicate)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>.data</code></td>
+<td>
+<p>A dataframe.</p>
+</td></tr>
+<tr valign="top"><td><code>name</code></td>
+<td>
+<p>String. The name of a column of the dataframe.</p>
+</td></tr>
+<tr valign="top"><td><code>predicate</code></td>
+<td>
+<p>A predicate function, e.g. <code><a href="is_multiple.html">is_multiple()</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>condition</code></td>
+<td>
+<p>A condition function, e.g. <code><a href="../../rlang/html/inform.html">rlang::inform()</a></code> or
+<code><a href="../../base/html/stop.html">base::stop()</a></code>.</p>
+</td></tr>
+<tr valign="top"><td><code>msg</code></td>
+<td>
+<p>String to customize the returned message.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+
+<ul>
+<li> <p><code>flag_if_group()</code>: A condition and its first input, invisibly.
+</p>
+</li>
+<li> <p><code>detect_if_group()</code>: Logical of length 1.
+</p>
+</li></ul>
+
+
+
+<h3>See Also</h3>
+
+<p>Other functions to check inputs: <code><a href="check_crucial_names.html">check_crucial_names</a></code>,
+<code><a href="is_multiple.html">is_multiple</a></code>
+</p>
+<p>Other functions for developers: <code><a href="check_crucial_names.html">check_crucial_names</a></code>,
+<code><a href="extract_insensitive.html">extract_insensitive</a></code>,
+<code><a href="is_multiple.html">is_multiple</a></code>, <code><a href="nms_try_rename.html">nms_try_rename</a></code>,
+<code><a href="rename_matches.html">rename_matches</a></code>, <code><a href="type_ensure.html">type_ensure</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+tree &lt;- tibble(CensusID = c(1, 2), treeID = c(1, 2))
+detect_if_group(tree, "treeID", is_multiple)
+flag_if_group(tree, "treeID", is_multiple)
+
+by_censusid &lt;- group_by(tree, CensusID)
+detect_if_group(by_censusid, "treeID", is_multiple)
+flag_if_group(by_censusid, "treeID", is_multiple)
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>

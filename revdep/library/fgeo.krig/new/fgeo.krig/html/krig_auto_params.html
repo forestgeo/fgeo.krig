@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Find &quot;best&quot; variogram parameters.</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for krig_auto_params {fgeo.krig}"><tr><td>krig_auto_params {fgeo.krig}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Find &quot;best&quot; variogram parameters.</h2>
+
+<h3>Description</h3>
+
+<p>Find the &quot;best&quot; variogram parameters for a given geodata object. Several
+different models are tested; the one with the lowest least squares error is
+chosen.
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+krig_auto_params(geodata, trend = "cte", breaks = krig_breaks(2, 320,
+  30))
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>geodata</code></td>
+<td>
+<p>a list containing element <code>coords</code>
+as described next. Typically an object of the class
+<code>"geodata"</code> - a <span class="pkg">geoR</span> data-set.
+If not provided the arguments
+<code>coords</code> must be provided instead.  </p>
+</td></tr>
+<tr valign="top"><td><code>trend</code></td>
+<td>
+<p>specifies the mean part of the model.
+See documentation of <code><a href="../../geoR/html/trend.spatial.html">trend.spatial</a></code> for further details.
+Defaults to <code>"cte"</code>.  </p>
+</td></tr>
+<tr valign="top"><td><code>breaks</code></td>
+<td>
+<p>a vector with values to define the variogram binning. Only
+used when <code>option = "bin"</code>.
+See <code>DETAILS</code> below for more details on how to specify the bins.
+</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A list of the best fitted variogram parameters. The following
+description is adapted from <code><a href="../../geoR/html/variog.html">geoR::variog()</a></code> &ndash; which you should see
+for more details:
+</p>
+
+<ul>
+<li><p> nugget: value of the nugget parameter. An estimated value if
+<code>fix.nugget = FALSE</code> or a fixed value if <code>fix.nugget = TRUE</code>.
+</p>
+</li>
+<li><p> sill and range: First and second elements of cov.pars' &ndash; a two elements
+vector with estimated values of the covariance parameters sigma^2 and phi,
+respectively.
+</p>
+</li>
+<li><p> kappa: Fixed value of the smoothness parameter.
+</p>
+</li>
+<li><p> model: Name of the correlation function (see<code> cov.model</code>).
+</p>
+</li>
+<li><p> minVM: The minimum fit error.
+</p>
+</li>
+<li><p> vg: The variogram.
+</p>
+</li></ul>
+
+
+
+<h3>Breaks default</h3>
+
+<p>The default breaks argument is set to have more points where the exponential
+curve rises the most and fewer at large distances. This means that the curve
+fitting is not overly biased by points beyond the effective maximum range.
+</p>
+
+
+<h3>Author(s)</h3>
+
+<p>Graham Zemunik (grah.zem@gmail.com).
+</p>
+
+
+<h3>See Also</h3>
+
+<p><a href="../../geoR/html/variog.html">geoR::variog</a>.
+</p>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.krig</em> version 1.0.0.9000 <a href="00Index.html">Index</a>]</div>
+</body></html>

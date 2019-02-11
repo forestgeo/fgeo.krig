@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Coerce objects of class &quot;krig_lst&quot; to dataframe or tbl...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for as_tibble.krig_lst {fgeo.krig}"><tr><td>as_tibble.krig_lst {fgeo.krig}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Coerce objects of class &quot;krig_lst&quot; to dataframe or tbl (tibble).</h2>
+
+<h3>Description</h3>
+
+<p>This method creates a dataframe from the output of <code>fgeo.krig::krig()</code>
+(which is a list of class &quot;krig_lst&quot;).
+</p>
+
+
+<h3>Usage</h3>
+
+<pre>
+## S3 method for class 'krig_lst'
+as_tibble(x, .id = "var", item = "df", ...)
+
+## S3 method for class 'krig_lst'
+as.data.frame(x, row.names = NULL, optional = FALSE,
+  .id = "var", item = "df", ...)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>x</code></td>
+<td>
+<p>The output of <code>fgeo.krig::krig()</code>.'</p>
+</td></tr>
+<tr valign="top"><td><code>.id</code></td>
+<td>
+<p>Name for the column to hold soil variable-names.</p>
+</td></tr>
+<tr valign="top"><td><code>item</code></td>
+<td>
+<p>Character string; either &quot;df&quot; or &quot;df.poly&quot;.</p>
+</td></tr>
+<tr valign="top"><td><code>...</code></td>
+<td>
+<p>Arguments passed to the <code><a href="../../base/html/as.data.frame.html">base::as.data.frame()</a></code> (not used in
+<code><a href="as_tibble.krig_lst.html">as_tibble.krig_lst()</a></code>).</p>
+</td></tr>
+<tr valign="top"><td><code>row.names</code></td>
+<td>
+<p><code>NULL</code> or a character vector giving the row
+names for the data frame.  Missing values are not allowed.</p>
+</td></tr>
+<tr valign="top"><td><code>optional</code></td>
+<td>
+<p>logical. If <code>TRUE</code>, setting row names and
+converting column names (to syntactic names: see
+<code><a href="../../base/html/make.names.html">make.names</a></code>) is optional.  Note that all of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>'s
+<span class="pkg">base</span> package <code>as.data.frame()</code> methods use
+<code>optional</code> only for column names treatment, basically with the
+meaning of <code><a href="../../base/html/data.frame.html">data.frame</a>(*, check.names = !optional)</code>.
+See also the <code>make.names</code> argument of the <code>matrix</code> method.</p>
+</td></tr>
+</table>
+
+
+<h3>Value</h3>
+
+<p>A dataframe.
+</p>
+
+
+<h3>See Also</h3>
+
+<p><code><a href="../../base/html/as.data.frame.html">base::as.data.frame()</a></code>, <code><a href="../../tibble/html/as_tibble.html">tibble::as_tibble()</a></code>.
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+vars &lt;- c("c", "p")
+krig &lt;- krig(soil_fake, vars, quiet = TRUE)
+
+as_tibble(krig)
+
+head(as.data.frame(krig, stringsAsFactors = FALSE))
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.krig</em> version 1.0.0 <a href="00Index.html">Index</a>]</div>
+</body></html>

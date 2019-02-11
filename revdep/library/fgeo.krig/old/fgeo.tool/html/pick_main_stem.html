@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><title>R: Pick the main stem or main stemid(s) of each tree in each...</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="R.css" />
+</head><body>
+
+<table width="100%" summary="page for pick_main_stem {fgeo.tool}"><tr><td>pick_main_stem {fgeo.tool}</td><td style="text-align: right;">R Documentation</td></tr></table>
+
+<h2>Pick the main stem or main stemid(s) of each tree in each census.</h2>
+
+<h3>Description</h3>
+
+
+<ul>
+<li> <p><code><a href="pick_main_stem.html">pick_main_stem()</a></code> picks a unique row for each <code>treeID</code> per census.
+</p>
+</li>
+<li> <p><code><a href="pick_main_stem.html">pick_main_stemid()</a></code> picks a unique row for each <code>stemID</code> per census. It is
+only useful when a single stem was measured twice in the same census, which
+sometimes happens to correct for the effect of large buttresses.
+</p>
+</li></ul>
+
+
+
+<h3>Usage</h3>
+
+<pre>
+pick_main_stem(data)
+
+pick_main_stemid(data)
+</pre>
+
+
+<h3>Arguments</h3>
+
+<table summary="R argblock">
+<tr valign="top"><td><code>data</code></td>
+<td>
+<p>A ForestGEO-like dataframe: A <em>ViewFullTable</em>, <em>tree</em> or <em>stem</em>
+table.</p>
+</td></tr>
+</table>
+
+
+<h3>Details</h3>
+
+
+<ul>
+<li> <p><code><a href="pick_main_stem.html">pick_main_stem()</a></code> picks the main stem of each tree in each census. It
+collapses data of multi-stem trees by picking a single stem per <code>treeid</code> per
+<code>censusid</code>. From this group, it picks the stem at the top of a list sorted
+first by descending order of <code>hom</code> and then by descending order of <code>dbh</code>.
+This this corrects the effect of buttresses and picks the main stem. It
+ignores groups of grouped data and rejects data with multiple plots.
+</p>
+</li>
+<li> <p><code><a href="pick_main_stem.html">pick_main_stemid()</a></code> does one step less than <code><a href="pick_main_stem.html">pick_main_stem()</a></code>. It only
+picks the main stemid(s) of each tree in each census and keeps all stems per
+treeid. This is useful when calculating the total basal area of a tree,
+because you need to sum the basal area of each individual stem as well as sum
+only one of the potentially multiple measurements of each buttressed stem per
+census.
+</p>
+</li></ul>
+
+
+
+<h3>Value</h3>
+
+<p>A dataframe with a single plotname, and one row per per treeid per
+censusid.
+</p>
+
+
+<h3>Warning</h3>
+
+<p>These functions may be considerably slow. They are fastest if the data
+already has a single stem per treeid. They are slower with data containing
+multiple stems per <code>treeid</code> (per <code>censusid</code>), which is the main reason for
+using this function. The slowest scenario is when data also contains
+duplicated values of <code>stemid</code> per <code>treeid</code> (per <code>censusid</code>). This may
+happen if trees have buttresses, in which case these functions check
+every stem for potential duplicates and pick the one with the largest <code>hom</code>
+value.
+</p>
+<p>For example, in a windows computer with 32 GB of RAM, a dataset with 2
+million rows with multiple stems and buttresses took about 3 minutes to run.
+And a dataset with 2 million rows made up entirely of main stems took about
+ten seconds to run.
+</p>
+
+
+<h3>See Also</h3>
+
+<p>Other functions to pick or drop rows of a ForestGEO dataframe: <code><a href="pick_drop.html">pick_drop</a></code>
+</p>
+
+
+<h3>Examples</h3>
+
+<pre>
+# One `treeID` with multiple stems. 
+# `stemID == 1.1` has two measurements (due to buttresses).
+# `stemID == 1.2` has a single measurement.
+census &lt;- tribble(
+    ~sp, ~treeID, ~stemID,  ~hom, ~dbh, ~CensusID,
+  "sp1",     "1",   "1.1",   140,   40,         1,  # main stemID (max `hom`)
+  "sp1",     "1",   "1.1",   130,   60,         1,  
+  "sp1",     "1",   "1.2",   130,   55,         1   # main stemID (only one)
+)
+
+# Picks a unique row per unique `treeID`
+pick_main_stem(census)
+
+# Picks a unique row per unique `stemID`
+pick_main_stemid(census)
+
+</pre>
+
+<hr /><div style="text-align: center;">[Package <em>fgeo.tool</em> version 1.2.2 <a href="00Index.html">Index</a>]</div>
+</body></html>
