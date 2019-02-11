@@ -2,21 +2,9 @@
 
 * Work in progress.
 
-This release marks that __fgeo.krig__ now meets CRAN standards. This is an internal release focused on making the package more reliable and easier to maintain.
+# fgeo.krig 1.0.1 ([GitHub](https://github.com/forestgeo/fgeo.krig/releases) and [drat](https://forestgeo.github.io/drat/))
 
-MORE RELIABLE
-
-* Require minimum versions of R packages.
-
-* Require R >= 3.3 (imposed by dependency RandomFields).
-
-* Check build on the three main platforms.
-
-EASIER TO MAINTAIN
-
-* Website now builds on Travis CI and deploys on the gh-branch.
-
-* .travis.yml now includes parameters that make the builds less likely to fail.
+This release marks that __fgeo.krig__ now meets CRAN standards. This is an internal release focused on making the package more reliable and easier to maintain (see [CHANGELOG](.github/CHANGELOG.md)).
 
 # fgeo.krig 1.0.0 ([GitHub](https://github.com/forestgeo/fgeo.krig/releases) and [drat](https://forestgeo.github.io/drat/))
 
