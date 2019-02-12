@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • fgeo.krig</title>
+<title>fgeo.krig 1.0.1 (GitHub and drat) • fgeo.krig</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -25,12 +25,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script>
+<link href="pkgdown.css" rel="stylesheet">
+<script src="pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="fgeo.krig 1.0.1 (GitHub and drat)" />
 
 
 
@@ -47,7 +47,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-title-body">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -59,7 +59,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">fgeo.krig</a>
+        <a class="navbar-link" href="index.html">fgeo.krig</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.1</span>
       </span>
     </div>
@@ -67,13 +67,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
+  <a href="index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -83,12 +83,12 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/siteonly/krige.html">Krige soil data</a>
+      <a href="articles/siteonly/krige.html">Krige soil data</a>
     </li>
   </ul>
 </li>
 <li>
-  <a href="../news/index.html">Changelog</a>
+  <a href="news/index.html">Changelog</a>
 </li>
       </ul>
       
@@ -120,78 +120,35 @@
 <div class="row">
   <div class="contents col-md-9">
     <div class="page-header">
-      <h1>Reference</h1>
+      <h1>fgeo.krig 1.0.1 (GitHub and drat)</h1>
     </div>
 
-    <table class="ref-index">
+<div id="fgeo-krig-1-0-1-github-and-drat" class="section level1">
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="as_tibble.krig_lst.html">as_tibble(<i>&lt;krig_lst&gt;</i>)</a></code> <code><a href="as_tibble.krig_lst.html">as.data.frame(<i>&lt;krig_lst&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Coerce objects of class "krig_lst" to dataframe or tbl (tibble).</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="krig.html">krig()</a></code> </p>
-        </td>
-        <td><p>Krige soil data following the methodology of the John et al. (2007).</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="krig_auto_params.html">krig_auto_params()</a></code> </p>
-        </td>
-        <td><p>Find "best" variogram parameters.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="krig_breaks.html">krig_breaks()</a></code> </p>
-        </td>
-        <td><p>Sequence of n exponentially increasing values.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="soil_fake.html">soil_fake</a></code> </p>
-        </td>
-        <td><p>Fake soil data with multiple soil variables.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="soil_random.html">soil_random</a></code> </p>
-        </td>
-        <td><p>Soil data for examples.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="summary.krig_lst.html">summary(<i>&lt;krig_lst&gt;</i>)</a></code> </p>
-        </td>
-        <td><p>Summary objects of class "krig_lst".</p></td>
-      </tr>
-    </tbody>
-    </table>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
-  </div>
+<p>This release marks that <strong>fgeo.krig</strong> now meets CRAN standards. This is an internal release focused on making the package more reliable and easier to maintain (see <a href="../NEWS.html">NEWS</a>).</p>
+<div id="more-reliable" class="section level3">
+<h3 class="hasAnchor">
+<a href="#more-reliable" class="anchor"></a>More reliable</h3>
+<ul>
+<li><p>Require minimum versions of R packages.</p></li>
+<li><p>Require R &gt;= 3.3 (imposed by dependency RandomFields).</p></li>
+<li><p>Check build on the three main platforms.</p></li>
+</ul>
 </div>
+<div id="easier-to-maintain" class="section level3">
+<h3 class="hasAnchor">
+<a href="#easier-to-maintain" class="anchor"></a>Easier to maintain</h3>
+<ul>
+<li><p>The website now builds on Travis CI and deploys on the gh-branch.</p></li>
+<li><p>.travis.yml now includes parameters that make the builds less likely to fail.</p></li>
+</ul>
+</div>
+</div>
+
+  </div>
+
+</div>
+
 
       <footer>
       <div class="copyright">
