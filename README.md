@@ -13,13 +13,6 @@ status](http://www.r-pkg.org/badges/version/fgeo.krig)](https://cran.r-project.o
 
 ## Installation
 
-Install the latest stable version of **fgeo.krig** with:
-
-``` r
-these_repos <- c(getOption("repos"), "https://forestgeo.github.io/drat")
-install.packages("fgeo.krig", repos = these_repos)
-```
-
 Install the development version of **fgeo.krig** with:
 
 ``` r
